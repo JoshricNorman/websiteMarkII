@@ -31,23 +31,40 @@
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
             align-content: center;
         }
 
+            #missingFlex > * {
+                margin: 3% 0;
+            }
+
             #missingFlex h3 {
                 color: var(--emphasisColor);
+                text-align: center;
             }
 
             #lostLogo {
-
+                background-image: url("../img/joshric_logoSurprised.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 100%;
+                max-width: 500px;
+                min-width: 100px;
+                height: 30%;
+                max-height: 800px;
+                min-height: 100px;
+                background-position: center;
             }
 
             #missingFlex a {}
 
             #missingFlex a button {
                 border: 3px solid var(--detailColor2);
+                letter-spacing: 1px;
+                font-size: 16px;
+                /*text-transform: uppercase;*/
             }
 
             #missingFlex a button:hover {
