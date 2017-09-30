@@ -292,6 +292,10 @@ $(document).ready(function(){
 
         $('html').css('overflow', 'auto'); //allow scrolling
 
+        //reset URL
+        var url = window.location.host;
+        var newURL = "http://" + url;
+        history.pushState(null, null, newURL);
     });
 
 

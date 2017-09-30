@@ -1,18 +1,51 @@
 <!DOCTYPE html>
 
-<html>
+<html id="missingTheme">
     <head>
 
         <!--Favicons -->
 
         <title>404: Page Not Found</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="css/404page.css"/>
 
 
     </head>
 
-    <body>
-        <div style="height:500px;width:500px;background-color:orange;">
-            <h1>PAGE NO EXIST</P>
+    <body id="missingBody">
+        <div id="content">
+
+            <a href="#"><div id="backItUp">&#10140;</div></a>
+
+            <header id="missingHeader">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="/portfolio" target="_self" id="portNav" class="navButt">PORTFOLIO</a>
+                        </li>
+
+                        <li>
+                            <a href="/about" target="_self" id="aboutNav" class="navButt">ABOUT</a>
+                        </li>
+
+                        <li>
+                            <a href="/resume" target="_self" id="resumeNav" class="navButt">RESUME</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div id="missingFlex">
+                <h3>Sorry, that page doesn't exist...</h3>
+
+                <div id="lostLogo"></div>
+
+                <a href="/">
+                    <button>Take me Home, I'm lost :(</button>
+                </a>
+            </div>
         </div>
+        <!-- END CONTENT -->
+
     </body>
 </html>
