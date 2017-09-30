@@ -1,0 +1,269 @@
+@charset "utf-8";
+/*CSS Document for About styling*/
+
+
+#projectsTheme {
+    --bgColor: var(--sky);
+    --detailColor1: var(--purple);
+    --detailColor2: var(--fave);
+    --emphasisColor: var(--pink);
+
+    --navColor: var(--red);
+    --hoverNavColor: var(--navColor);
+}
+
+.projFillCont{
+    /*padding-top: 0;*/
+}
+
+ #contentWrapper .projFillCont div {
+    margin: 0;
+}
+
+    #imgModal {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: none;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+
+        z-index: 10000;
+        cursor: zoom-out;
+    }
+
+        #modalImg {
+            width: 75%;
+            max-width: 900px;
+            height: auto;
+            padding-top: 100px;
+
+        }
+
+        #modalDesc {
+            color: white;
+            margin-bottom: 5%;
+        }
+
+    #projEnvelope {
+        /*position: fixed;*/
+        height: 100%;
+        width: 100%;
+        background: var(--emphasisColor);
+
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: stretch;
+        align-content: stretch;
+        margin: 0;
+        padding: 0;
+    }
+
+        #projImgs {
+            width: 60%;
+            height: 100%;
+            padding-bottom: 200px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            align-content: center;
+        }
+
+            #projImgs img {
+                height: 300px;
+                width: 200px;
+                margin-bottom: 25px;
+                background-color: gray;
+
+                cursor: zoom-in;
+            }
+
+        #projSide {
+            width: 34%;
+            height: 100%;
+            background-color: var(--bgColor);
+            padding: 50px 3%;
+
+            position: fixed;
+            left: 0;
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: flex-end;
+
+        }
+
+            #exitProj {
+                color: var(--detailColor1);
+                opacity: .5;
+                transition: all 0.5s ease;
+                margin-bottom: 50px;
+                align-self: flex-end;;
+                font-weight: 700;
+            }
+
+            #exitProj:hover {
+                color: var(--emphasisColor);
+                opacity: 1;
+                transition: all 0.5s ease;
+            }
+
+            #projDets {
+                margin-top: 250px;
+                border: solid 5px var(--detailColor1);
+                width:  100%;
+                height: 65%;
+
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-content: center;
+                align-items: center;
+            }
+
+                #projDetTop {
+                    border-bottom: solid 5px var(--detailColor1);
+                    width: 100%;
+                    /*padding: 5px 0;*/
+
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: space-evenly;
+                    align-items: stretch;
+                    align-content: stretch;
+                    flex-grow: 1;
+                }
+
+                    #projTitle {
+                        margin: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        /*height: 100%;*/
+                        width: 65%;
+
+                        padding: 0 4%;
+                    }
+
+                        #projTitle h5 {
+                            margin: 0;
+                            /*height: 100%;*/
+
+                            text-align: center;
+                            color: var(--emphasisColor);
+                            text-transform: uppercase;
+                        }
+
+
+                    #projDate {
+                        height: auto;
+                        width: 35%;
+                        /*min-width: 90px;*/
+                        max-width: 104px;
+                        background-color: gray;
+                        display: inline-block;
+
+                        border-left: solid 5px var(--detailColor1);
+
+                    }
+
+                #projDetMid {
+                    /*background-color: pink;*/
+                    /*padding: 15px 5%;*/
+                    width: 100%;
+                    /*border-bottom: solid 5px var(--detailColor1);*/
+                    flex-grow: 2;
+
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    align-content: center;
+                    align-items: : center;
+                }
+
+                    #projDesc {
+                        color: var(--detailColor2);
+                        padding: 0 8%;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        max-height: 250px;
+                        display: inline-block;
+                    }
+
+                    #projTags {
+                        list-style: none;
+                        font-family: "Nunito", sans-serif;
+                        font-weight: 700;
+                        font-size: 11px;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                        text-align: center;
+                        padding: 15px 0;
+                        margin: 0;
+                        color: var(--detailColor1);
+                    }
+
+                        #projTags li {
+                            display: inline;
+                            margin: 0 1.5%;
+                        }
+
+                #projDetBott {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    align-content: center;
+                    align-items: center;
+                    flex-grow: 1;
+
+
+                    padding-bottom: 25px;
+                    width: 100%;
+
+                }
+
+                    #prevProj {}
+
+                    #behanceButt {
+                        background-color: var(--bgColor);
+                        border: 3px solid var(--detailColor2);
+                        box-shadow: 0px 0px 0px var(--detailColor1);
+                        transition: box-shadow 0.5s ease;
+                        margin: 15px auto;
+
+                        font-size: 10px;
+                    }
+
+                    #behanceButt:hover {
+                        box-shadow: 10px 10px 10px var(--detailColor1);
+                        border: 3px solid var(--emphasisColor);
+                        transition: all 0.5s ease;
+                        --bounceDist: -3px;
+                        animation: bounce 1s;
+                        animation-fill-mode: forwards;
+                    }
+                    #nextProj {}
+
+
+.projFoot {
+    display:none;
+}
+
+.projFootText {
+    display:none;
+}

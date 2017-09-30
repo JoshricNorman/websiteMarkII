@@ -1,0 +1,412 @@
+@charset "utf-8";
+/* CSS Document for the styling of every page */
+
+@import url("fonts.css");
+
+/*Import all individual css for each page*/
+@import url("index.css");
+@import url("about.css");
+@import url("resume.css");
+@import url("projects.css");
+
+/*Basic Page formatting*/
+:root {
+
+    /*Custom Properties for theme colors*/
+    --pink: #FBBFC9;
+    --mauve: #B85279;
+    --red: #F1593B;
+    --sky: #8290F4;
+    --blue: #5750EF;
+    --purple: #592CEF;
+    --yellow: #FECF5C;
+    --gold: #F78E1E;
+    --spring: #EBEF9C;
+    --green: #A3D783;
+    --snot: #82BB00;
+    --fave: #3E0660;
+
+    --navColor: var(--red);           /*Change on click in jquery */
+    --hoverNavColor: var(--navColor); /*Change on hover in jquery*/
+
+    --bgColor: var(--pink);
+    --detailColor1: var(--mauve);
+    --detailColor2: var(--red);
+    --emphasisColor: var(--snot);
+
+    --bounceDist: -15px;
+}
+
+html {
+    /*background-color: var(--bgColor);*/
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    height: 100%;
+
+}
+
+
+@keyframes spin {
+    from {
+            -ms-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+    }
+    to {
+            -ms-transform: rotate(-360deg);
+            -moz-transform: rotate(-360deg);
+            -webkit-transform: rotate(-360deg);
+            -o-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    }
+}
+
+@keyframes underlineNav {
+    from {
+        -ms-transform: scale(0, 1);
+        -webkit-transform: scale(0, 1);/
+        transform: scale(0, 1);
+    }
+    to {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);/
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes bounce {
+    from {
+        -ms-transform: translate(0px,0px); /* IE 9 */
+        -webkit-transform: translate(0px, 0px); /* Safari */
+        transform: translate(0px, 0px);
+    }
+    to {
+        -ms-transform: translate(0px, var(--bounceDist)); /* IE 9 */
+        -webkit-transform: translate(0px, var(--bounceDist)); /* Safari */
+        transform: translate(0px, var(--bounceDist));
+    }
+}
+
+    body {
+        margin: 0;
+        padding: 0;
+        /*height: 100%;*/
+        background-color: var(--bgColor);
+        transition: background-color 0.5s ease;
+        box-shadow: inset 0 0 250px 0px var(--detailColor1);
+    }
+        #popUp {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: 10000;
+            overflow-y: scroll;
+        }
+
+        #content {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+            #backItUp {
+                width: 50px;
+                height: 50px;
+                background-color: var(--detailColor1);
+                opacity: .75;
+                border-radius: 50%;
+                position: fixed;
+                z-index: 5000;
+                right: 50px;
+                bottom: 175px;
+
+                color: var(--bgColor);
+                text-align: center;
+                line-height: 53px;
+                font-family: 'Nunito', sans-serif;
+                font-size: 36px;
+                font-weight: 900;
+
+                -ms-transform: rotate(-90deg); /* IE 9 */
+                -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+                transform: rotate(-90deg);
+
+                transition: opacity 0.5s ease;
+                display: none;
+            }
+
+            #backItUp:hover{
+                opacity: 1;
+                transition: opacity 0.5s ease;
+            }
+
+            header {
+                background-color: rgba(255, 255, 255, 0.85);
+                position: fixed;
+                width: 100%;
+                z-index: 999;
+            }
+
+                nav { }
+
+                    nav ul {
+                        margin: 0;
+                        padding: 20px  15% 20px 0;
+                        display: flex;
+                        justify-content: flex-end;
+                        flex-direction: row;
+                        font-family: 'Nunito', sans-serif;
+                        font-weight: 800;
+                    }
+
+                    nav ul li {
+                        margin: 0 1% 0 1%;
+                        padding: 3px 3px 5px 3px;
+                        /*background: gray;*/
+                        display: block;
+                    }
+
+
+
+                        nav ul li a {
+                            text-decoration: none;
+                            color: var(--fave);
+                            transition: color 1s ease;
+                            font-weight: 800;
+                        }
+
+                        nav ul li #portNav:hover {
+                            --hoverNavColor: var(--red);
+                            color: var(--hoverNavColor);
+                            transition: color 1s ease;
+                        }
+
+                        nav ul li #aboutNav:hover {
+                            --hoverNavColor: var(--purple);
+                            color: var(--hoverNavColor);
+                            transition: color 1s ease;
+                        }
+
+                        nav ul li #resumeNav:hover {
+                            --hoverNavColor: var(--gold);
+                            color: var(--hoverNavColor);
+                            transition: color 1s ease;
+                        }
+
+                    #activeNav::after {
+                       content: '';
+                       position: relative;
+                       display: block;
+                       margin: auto;
+                       width: 75%;
+                       height: 3px;
+                       background-color: var(--navColor);
+                       bottom: -10px;
+
+                       animation: underlineNav .25s;
+                       z-index: 1000;
+                    }
+
+                        #activeNav a {
+                            color: var(--navColor);
+                        }
+
+            #contentWrapper{
+                width: 100%;
+            }
+
+                #fillContent {
+                    padding: 80px 0 0 0;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: 100%
+                }
+
+                    #fillContent > div {
+                        margin-bottom: 100px;
+                    }
+
+            footer {
+                margin: 15% 5% 10px 5%;
+                padding: 15px 0;
+                /*background-color: orange;*/
+                border-bottom: solid 3px var(--detailColor1);
+                border-top: solid 3px var(--detailColor1);
+
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+                align-content: center;
+
+                width: 95%;
+                height: auto;
+            }
+
+
+                #svgLogo {
+                    height: 50px;
+                    width: auto;
+                    margin-left: 3%;
+                    transition: all 4s ease-in-out;
+                }
+
+                #svgLogo:hover {
+                    -ms-transform: rotate(-3600deg); /* IE 9 */
+                    -webkit-transform: rotate(-3600deg); /* Safari */
+                    transform: rotate(-3600deg);
+                    transition: all 4s ease-in-out;
+                }
+
+                    .joshricLogo {
+                        fill: var(--detailColor1);
+                    }
+
+                #socialMedia {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    align-items: center;
+                    align-content: center;
+                    /*background-color: green;*/
+                    margin-right: 3%;
+
+                }
+
+                    .socMedButt {
+                        height: 25px;
+                        width: auto;
+                        margin: 5px 15px;
+                        opacity: .50;
+                        transition: all 0.5s ease;
+                    }
+
+                    .socMedButt:hover{
+                        opacity: 1;
+                        transition: all 0.5s ease;
+                    }
+
+                    #behance {
+                        height: 20px;
+                        width: auto;
+                        padding-top: 3px;
+                    }
+
+                        .socMedButtFill {
+                            fill: var(--detailColor1);
+                        }
+
+            .footerText {
+                color: var(--detailColor1);
+                font-family: "Nunito", sans-serif;
+                font-weight: 600;
+                font-size: 16px;
+
+                margin: 10px 5% 15px 5%;
+            }
+
+                .footerText span {
+                    font-weight: 100;
+                    font-size: 12px;
+                }
+
+/*Basic text formatting sans color*/
+h1 {}
+
+h2 {}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 3px;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+h4 {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+h5 {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+h6 {
+    font-family: "Nunito", sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+p {
+    font-family: "Nunito", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 32px;
+}
+
+p b {
+    /*font-size: 14px;*/
+    font-weight: 800;
+}
+
+a {
+    color: var(--emphasisColor);
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 32px;
+    text-decoration: none;
+}
+
+a:hover {}
+
+button {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 3px solid white;
+    border-radius:  7px;
+    padding: 10px 15px;
+    font-family: 'Nunito', sans-serif;
+    color: var(--detailColor2);
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-align: center;
+    cursor: pointer;
+    opacity: .85;
+    transition: opacity 0.5s ease;
+    transition: background-color 0.5s ease;
+    transition: color 0.2s ease;
+}
+
+button:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 1);
+    transition: opacity 0.5s ease;
+    transition: background-color 0.5s ease;
+    color: var(--emphasisColor);
+    transition: color 0.2s ease;
+}
