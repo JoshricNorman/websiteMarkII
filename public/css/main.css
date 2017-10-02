@@ -1,13 +1,6 @@
 @charset "utf-8";
-/* CSS Document for the styling of every page */
+/* CSS Document for the general formatting of every page and hold the css custom properties*/
 
-@import url("fonts.css");
-
-/*Import all individual css for each page*/
-@import url("index.css");
-@import url("about.css");
-@import url("resume.css");
-@import url("projects.css");
 
 /*Basic Page formatting*/
 :root {
@@ -38,14 +31,11 @@
 }
 
 html {
-    /*background-color: var(--bgColor);*/
     margin: 0;
     padding: 0;
     overflow-y: scroll;
     height: 100%;
-
 }
-
 
 @keyframes spin {
     from {
@@ -236,9 +226,9 @@ html {
                     width: 100%
                 }
 
-                    #fillContent > div {
+                    /*#fillContent > div {
                         margin-bottom: 100px;
-                    }
+                    }*/
 
             footer {
                 margin: 15% 5% 10px 5%;

@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document for dictating the order of css styling*/
+
+@import url("fonts.css");
+
+/*Import all individual css for each page*/
+@import url("main.css");
+@import url("index.css");
+@import url("about.css");
+@import url("resume.css");
+@import url("projects.css");
+@import url("mediaQueries.css");

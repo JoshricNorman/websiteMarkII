@@ -16,17 +16,14 @@
 }
 
     #slideshow {
-        /*background-color: orange;*/
         width: 100%;
-        /*max-width: 1400px;*/
-        height: 600px;
-        margin-bottom: 50px;
+        height: 650px;
+        margin-bottom: 100px;
     }
 
         #slideshowImg {
             width: 100%;
-            height: 650px;
-            /*max-height: 1000px;*/
+            height: 100%;
             background-color: var(--detailColor1);
 
             background-image: url("../img/joshric_background1_17Aug20.jpg");
@@ -107,7 +104,7 @@
             }
 
     #projectFlexBox {
-        margin-top: 60px;
+        /*margin-top: 60px;*/
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

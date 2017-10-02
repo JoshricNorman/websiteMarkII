@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document for the styling based on media queries */
+
+
+/*/////////////////////////MAX-WIDTH 500PX/////////////////////////*/
+
+    @media screen and (max-width: 500px) {
+
+    /*------------------------ MAIN.CSS ------------------------*/
+
+        #backItUp {
+            bottom: 3vh;
+            right: 3vw;
+        }
+
+        header {
+            bottom: 0;
+        }
+
+            nav ul {
+                padding-right: 0;
+                justify-content: center;
+            }
+
+        #fillContent {
+            padding: 0;
+        }
+
+        footer {}
+
+        .footerText {
+            margin-bottom: 15vh;
+        }
+
+    /*------------------------ INDEX.CSS ------------------------*/
+            #slideshow {
+                height: 75vh;
+                /*margin-bottom: 4px;*/
+            }
+
+                #slideshowImg {
+                }
+
+    /*------------------------ ABOUT.CSS ------------------------*/
+
+    /*------------------------ RESUME.CSS ------------------------*/
+
+            #expiAchi {
+
+            }
+
+                #expertise {
+                    width: 100vw;
+                    padding: 2vh 0;
+                }
+
+                    #expBarWrap {
+                        padding: 2vh 0;
+
+                    }
+
+                #achievements {
+                    margin-left: 0;
+                }
+    /*------------------------ PROJECT.CSS ------------------------*/
+
+    } /*END MAX-WIDTH 500PX*/
