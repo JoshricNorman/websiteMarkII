@@ -4,7 +4,7 @@
 
 /*/////////////////////////MAX-WIDTH 500PX/////////////////////////*/
 
-    @media screen and (max-width: 500px) {
+    @media screen and (min-width: 320.1px) and (max-width: 500px) {
 
     /*------------------------ MAIN.CSS ------------------------*/
 
@@ -29,7 +29,7 @@
         footer {}
 
         .footerText {
-            margin-bottom: 15vh;
+            margin-bottom: 18vh;
         }
 
     /*------------------------ INDEX.CSS ------------------------*/
@@ -139,3 +139,159 @@
                             }
 
     } /*END MAX-WIDTH 500PX*/
+
+/*/////////////////////////MAX-WIDTH 320PX/////////////////////////*/
+
+    @media screen and (max-width: 320px) {
+
+    /*------------------------ MAIN.CSS ------------------------*/
+
+        #backItUp {
+            bottom: 3vh;
+            right: 3vw;
+            width: 40px;
+            height: 40px;
+            font-size: 30px;
+            line-height: 43px;
+        }
+
+        header {
+            bottom: 0;
+        }
+
+            nav ul {
+                padding: 15px 15px 15px 0;
+                justify-content: center;
+            }
+
+                    nav ul li a {
+                        font-size: 14px;
+                    }
+
+        #fillContent {
+            padding: 0;
+        }
+
+        footer {
+
+        }
+
+            #svgLogo {
+                display: none;
+            }
+
+            #socialMedia {
+                margin: auto;
+            }
+        .footerText {
+            margin-bottom: 15vh;
+            font-size: 12px;
+        }
+
+    /*------------------------ INDEX.CSS ------------------------*/
+            #slideshow {
+                height: 75vh;
+                /*margin-bottom: 4px;*/
+            }
+
+                #slideshowImg {
+                }
+
+    /*------------------------ ABOUT.CSS ------------------------*/
+
+    /*------------------------ RESUME.CSS ------------------------*/
+
+            #resumeHeadImg {
+                order: -2;
+            }
+                #education {
+                    margin-top: 15px;
+                }
+
+                .resumeInfo h4 {
+                    text-align: center;
+                }
+
+            #whatCanIDo {
+                width: 85vw;
+            }
+
+                #whatCanIDo h3 {
+                    text-align: center;
+                }
+
+            #expiAchi {
+
+            }
+
+                #expertise {
+                    width: 100vw;
+                    padding: 2vh 0;
+                }
+
+                    #expBarWrap {
+                        padding: 2vh 0;
+                        justify-content: center;
+                    }
+
+                        .expDet {
+                            margin: 5px 3vw;
+                        }
+
+                #achievements {
+                    margin-left: 0;
+                }
+
+            #resumePDFA {
+                order: -1;
+                margin-top: 10px;
+            }
+    /*------------------------ PROJECT.CSS ------------------------*/
+
+            #projEnvelope {
+                flex-direction: column;
+                align-items: center;
+            }
+
+                #projImgs {
+                    padding: 15vh 0 5vh 0;
+                    width: 75vw;
+
+                }
+
+                    .projImg {
+                        width: 100%;
+                        height: auto;
+                    }
+
+                #projSide {
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+
+                    width: 100vw;
+                    height: auto;
+                    padding: 0 0vw 15vh 0vw;
+                    position: static;
+                }
+
+                    #exitProj {
+                        margin: 15px 25px 15px 0px;
+                        font-size: 22px;
+                        color: var(--emphasisColor);
+                    }
+
+                    #projDets {
+                        width: 85%;
+                        height: auto;
+                    }
+
+                        #projDetTop {
+                            height: 85px;
+                        }
+
+                            #projDesc {
+                                overflow:visible;
+                            }
+
+    }  /*END MAX-WIDTH 350PX*/

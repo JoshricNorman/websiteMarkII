@@ -265,9 +265,7 @@ $(document).ready(function(){
             $(this).css("display", "block");
             $(this).find("#exitProj").css("display", "block").addClass("portExitProj");
             $(this).find("#projEnvelope").css({
-                "margin-top": "2px",
                 "background-color": "rgba(255, 255, 255, 0.75)",
-
             });
             $(this).find("#projImgs").css("margin-top", "100px");
             $(this).find("#imgModal").addClass("portImgModal"); //prevents creating another scrollbar
@@ -316,6 +314,11 @@ $(document).ready(function(){
     $(document).on("click", "#contactButt", function(){
         $("html, body").animate({
             scrollTop: ( $("#contactWrapper").position().top - 150)
+        });
+
+        $("#contactWrapper").css({
+            "opacity": "1",
+            // "display": "block"
         });
 
     });

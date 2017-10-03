@@ -13,10 +13,6 @@
 }
 
 
- #contentWrapper .projFillCont div {
-    margin: 0;
-}
-
     #imgModal {
         position: fixed;
         height: 100%;
@@ -47,7 +43,6 @@
         }
 
     #projEnvelope {
-        /*position: fixed;*/
         height: 100%;
         width: 100%;
         background: var(--emphasisColor);
@@ -119,7 +114,7 @@
             }
 
             #projDets {
-                margin-top: 250px;
+                /*margin-top: 250px;*/
                 border: solid 5px var(--detailColor1);
                 width:  95%;
                 height: 65%;

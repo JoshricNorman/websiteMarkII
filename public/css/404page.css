@@ -56,6 +56,15 @@
                 max-height: 800px;
                 min-height: 100px;
                 background-position: center;
+
+                transition: all 4s ease-in-out;
+            }
+
+            #lostLogo:active {
+                -ms-transform: rotate(-3600deg); /* IE 9 */
+                -webkit-transform: rotate(-3600deg); /* Safari */
+                transform: rotate(-3600deg);
+                transition: all 4s ease-in-out;
             }
 
             #missingFlex a {}
