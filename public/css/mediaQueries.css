@@ -45,6 +45,25 @@
 
     /*------------------------ RESUME.CSS ------------------------*/
 
+            #resumeHeadImg {
+                order: -2;
+            }
+                #education {
+                    margin-top: 15px;
+                }
+
+                .resumeInfo h4 {
+                    text-align: center;
+                }
+
+            #whatCanIDo {
+                width: 85vw;
+            }
+
+                #whatCanIDo h3 {
+                    text-align: center;
+                }
+
             #expiAchi {
 
             }
@@ -56,12 +75,67 @@
 
                     #expBarWrap {
                         padding: 2vh 0;
-
+                        justify-content: center;
                     }
+
+                        .expDet {
+                            margin: 5px 3vw;
+                        }
 
                 #achievements {
                     margin-left: 0;
                 }
+
+            #resumePDFA {
+                order: -1;
+                margin-top: 10px;
+            }
     /*------------------------ PROJECT.CSS ------------------------*/
+
+            #projEnvelope {
+                flex-direction: column;
+                align-items: center;
+            }
+
+                #projImgs {
+                    padding: 15vh 0 5vh 0;
+                    width: 75vw;
+
+                }
+
+                    .projImg {
+                        width: 100%;
+                        height: auto;
+                    }
+
+                #projSide {
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+
+                    width: 100vw;
+                    height: auto;
+                    padding: 0 0vw 15vh 0vw;
+                    position: static;
+                }
+
+                    #exitProj {
+                        margin: 15px 25px 15px 0px;
+                        font-size: 22px;
+                        color: var(--emphasisColor);
+                    }
+
+                    #projDets {
+                        width: 85%;
+                        height: auto;
+                    }
+
+                        #projDetTop {
+                            height: 85px;
+                        }
+
+                            #projDesc {
+                                overflow:visible;
+                            }
 
     } /*END MAX-WIDTH 500PX*/

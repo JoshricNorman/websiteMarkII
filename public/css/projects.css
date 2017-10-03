@@ -12,9 +12,6 @@
     --hoverNavColor: var(--navColor);
 }
 
-.projFillCont{
-    /*padding-top: 0;*/
-}
 
  #contentWrapper .projFillCont div {
     margin: 0;
@@ -32,12 +29,12 @@
         align-items: center;
         align-content: center;
 
-        z-index: 10000;
+        z-index: 10050;
         cursor: zoom-out;
     }
 
         #modalImg {
-            width: 75%;
+            width: 75vw;
             max-width: 900px;
             height: auto;
             padding-top: 100px;
@@ -78,8 +75,10 @@
         }
 
             #projImgs img {
-                height: 300px;
-                width: 200px;
+                /*height: 300px;
+                width: 200px;*/
+                width: 95%;
+                height: auto;
                 margin-bottom: 25px;
                 background-color: gray;
 
@@ -122,7 +121,7 @@
             #projDets {
                 margin-top: 250px;
                 border: solid 5px var(--detailColor1);
-                width:  100%;
+                width:  95%;
                 height: 65%;
 
                 display: flex;

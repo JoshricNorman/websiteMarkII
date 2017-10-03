@@ -22,6 +22,8 @@ $(document).ready(function(){
     var cycleTimer; //variable for auto playing slideshow
     var slideshowIndex = 0;
 
+    // const medQ;
+
 //-----------------NAVIGATION-----------------\\
 
     /* Function to:
@@ -106,8 +108,14 @@ $(document).ready(function(){
         var pageName = splitURL[splitURL.length - 1] //figures out which page we're displaying
         var truePageName = pageName + ".html";
 
-        //set the correct URL
-        // history.replaceState(null, null, url);
+
+        //In the event that we are navigating from a project popUp, emppty the popUp
+        //and reset scrolling
+        $("#popUp").empty().css("display", "none");
+        $('html').css('overflow', 'auto'); //allow scrolling
+
+
+        //set the correct URL and push it to history so we can navigate back and forth
         history.pushState(null, null, url);
 
 
@@ -257,22 +265,23 @@ $(document).ready(function(){
             $(this).css("display", "block");
             $(this).find("#exitProj").css("display", "block").addClass("portExitProj");
             $(this).find("#projEnvelope").css({
-                "margin": "2px",
-                "background-color": "rgba(255, 255, 255, 0.75)"
+                "margin-top": "2px",
+                "background-color": "rgba(255, 255, 255, 0.75)",
+
             });
             $(this).find("#projImgs").css("margin-top", "100px");
-            $(this).find("#projDets").css("margin-top", "50px");
-            $(this).find("#imgModal").addClass("portImgModal");
+            $(this).find("#imgModal").addClass("portImgModal"); //prevents creating another scrollbar
 
             //restyle popup
-            $(this).find("#projDets").css("border", "solid 5px var(--detailColor2)");
+            $(this).find("#projDets").css({
+                "border": "solid 5px var(--detailColor2)",
+                "margin-top": "0"
+            });
             $(this).find("#projDetTop").css("border-bottom", "solid 5px var(--detailColor2)");
             $(this).find("#projDate").css("border-left", "solid 5px var(--detailColor2)");
 
-
             $("#content").css({
                 "overflow": "hidden",
-                // "position": "fixed",
                 "overflow-y": "hidden"
             });
             $('html').css('overflow', 'hidden'); //prevent scrolling behind the modal some how
@@ -296,6 +305,9 @@ $(document).ready(function(){
         var url = window.location.host;
         var newURL = "http://" + url;
         history.pushState(null, null, newURL);
+
+        $("nav").css("visibility", "visible");
+
     });
 
 
@@ -328,6 +340,8 @@ $(document).ready(function(){
 
         $('html').css('overflow', 'hidden');
 
+        $('header').css('z-index', '800');
+
     });
 
     /* Function to:
@@ -340,6 +354,8 @@ $(document).ready(function(){
         $("#modalDesc").empty();
         $("#imgModal").css("display", "none");
         $(".projFillCont").css("padding-top", "80px");
+        $('header').css('z-index', '10010');
+
 
         //if we are in the portfolio Modal, prevent creating another scroll bar
         if( $(this).attr("class") == "portImgModal")
