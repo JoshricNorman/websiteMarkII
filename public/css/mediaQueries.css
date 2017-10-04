@@ -26,7 +26,9 @@
             padding: 0;
         }
 
-        footer {}
+        footer {
+            width: 90vw;
+        }
 
         .footerText {
             margin-bottom: 18vh;
@@ -43,6 +45,15 @@
 
     /*------------------------ ABOUT.CSS ------------------------*/
 
+                #media .intList li {
+                    font-size: 12px;
+                    letter-spacing: 0;
+                    display: inline-block;
+                    margin: 0 3vw 0 0;
+                }
+
+
+
     /*------------------------ RESUME.CSS ------------------------*/
 
             #resumeHeadImg {
@@ -56,16 +67,23 @@
                     text-align: center;
                 }
 
+                .resumeInfo h6 {
+                    font-size: 12px;
+                    font-weight: 800;
+                }
+
             #whatCanIDo {
                 width: 85vw;
             }
 
                 #whatCanIDo h3 {
                     text-align: center;
+                    font-size: 24px;
+                    letter-spacing: normal;
                 }
 
-            #expiAchi {
-
+            #expAchi {
+                padding: 40px 0;
             }
 
                 #expertise {
@@ -76,7 +94,21 @@
                     #expBarWrap {
                         padding: 2vh 0;
                         justify-content: center;
+                        min-width: 0;
+                        width: 98vw;
                     }
+
+                        .expDet {
+
+                        }
+
+                            .expTitle {
+                                font-size: 10px;
+                            }
+
+                            .expBarBG {
+                                width: 40vw;
+                            }
 
                         .expDet {
                             margin: 5px 3vw;
@@ -198,7 +230,63 @@
                 }
 
     /*------------------------ ABOUT.CSS ------------------------*/
+            #introduction{}
 
+                #circleWords {
+                    min-width: 60vw;
+                }
+
+                #aboutMe {
+                    font-size: 0;
+                    visibility: hidden;
+                    line-height: 0;
+                    /*height: 0;*/
+                }
+                #aboutMe::before {
+                    font-size: 12px;
+                    font-weight: 800;
+                    content: "Hello! The screen you're viewing this on is small, so I'll make this brief: My name is Joshric and I'm a Filipino-American graphic designer. A graduate from UC San Diego, I've had the pleasure of working at a design studio for more than a few years! Get a hold of me if you ever need some work done :)";
+                    visibility: visible;
+                    line-height: 32px;
+
+                }
+
+                #interestFlex {
+                    width: 95vw;
+                    justify-content: flex-start;
+                    padding: 0;
+                }
+
+                    .intFlexChild {
+                        margin: 10px 5vw 10px 8vw;
+                    }
+
+                        .intTitle {
+                            margin: 0;
+                        }
+
+                        .intList {}
+
+                            .intList li {
+                                font-size: 12px;
+                                letter-spacing: 0;
+                                display: inline-block;
+                                margin: 0 3vw 0 0;
+                            }
+
+            #contactWrapper {
+                width: 90vw;
+            }
+                #contactDesc {
+                    display: none;
+                }
+
+                #contactInfo{}
+
+                    #contactImp {
+                        width: 85%;
+                        padding: 2vh 0;
+                    }
     /*------------------------ RESUME.CSS ------------------------*/
 
             #resumeHeadImg {
@@ -208,35 +296,110 @@
                     margin-top: 15px;
                 }
 
-                .resumeInfo h4 {
-                    text-align: center;
+                .resumeInfo {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    flex-wrap: nowrap;
+                    align-content: center;
                 }
 
-            #whatCanIDo {
-                width: 85vw;
-            }
-
-                #whatCanIDo h3 {
-                    text-align: center;
-                }
-
-            #expiAchi {
-
-            }
-
-                #expertise {
-                    width: 100vw;
-                    padding: 2vh 0;
-                }
-
-                    #expBarWrap {
-                        padding: 2vh 0;
-                        justify-content: center;
+                    .resumeBullet {
+                        margin: 2vh 0;
                     }
 
-                        .expDet {
-                            margin: 5px 3vw;
+                        .resumeTitle {
+                            margin-left: 5vw;
                         }
+
+                    .resumeInfo h4 {
+                        text-align: center;
+                    }
+
+                    .resumeInfo h6 {
+                        font-size: 10px;
+                        font-weight: 600;
+                    }
+
+                        .resumeDesc {
+                            font-size: 12px;
+                            letter-spacing: 0;
+                            margin: 0 0 0 2vw;
+                            margin: auto;
+                            width: 80%;
+                        }
+
+                #whatCanIDo {
+                    width: 85vw;
+                }
+
+                    #whatCanIDo h3 {
+                        text-align: center;
+                        font-size: 20px;
+                        letter-spacing: normal;
+                    }
+
+                    #abilityFlex {
+                        /*flex-direction: column;
+                        align-items: center;*/
+                    }
+
+                        .ability {
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 3vh 0;
+                            width: 40%;
+                            min-width: 0;
+                        }
+
+                            .abilityImg {
+                                margin-bottom: 3vh;
+                            }
+
+                            .abilityInfo {
+                                margin: 0;
+                            }
+
+                                .abilityTitle {
+                                    text-align: center;
+                                    font-size: 12px;
+                                }
+
+                                .abilityDesc {
+                                    text-align: center;
+                                    display: none;
+                                }
+
+
+
+                #expAchi {
+                    padding: 40px 0;
+                }
+
+                    #expertise {
+                        width: 100vw;
+                        padding: 2vh 0;
+                    }
+
+                        #expBarWrap {
+                            padding: 2vh 0;
+                            justify-content: center;
+                            min-width: 0;
+                            width: 98vw;
+                        }
+
+                            .expDet {
+                                margin: 5px 3vw;
+                            }
+
+                                .expTitle{
+                                    font-size: 10px;
+                                }
+
+                                .expBarBG {
+                                    width: 35vw;
+                                }
 
                 #achievements {
                     margin-left: 0;
@@ -291,7 +454,13 @@
                         }
 
                             #projDesc {
-                                overflow:visible;
+                                /*overflow:visible;*/
+                                max-height: none;
+                                font-size: 12px;
+                            }
+
+                            #projTags {
+                                display: none;
                             }
 
     }  /*END MAX-WIDTH 350PX*/

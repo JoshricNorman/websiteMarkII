@@ -62,8 +62,9 @@ $(document).ready(function(){
         var clickNavButt = $(this).attr("id");
 
         //  add active id to clicked on nav
-        if( $(this).parent().attr("id") != "activeNav" ) {
+        if( $(this).parent().attr("id") != "activeNav" || $(this).parent().attr("class") == "projectActiveNav" ) {
              $(this).parent().attr( "id", "activeNav" );
+             $(this).parent().removeClass();
 
              //Reset some styling when navigating outside of projects
              $("footer").css("display", "flex");
