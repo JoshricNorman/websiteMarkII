@@ -143,8 +143,12 @@ $(document).ready(function(){
       */
     $(window).on('scroll', function( event ) {
         var scrollPos = $(document).scrollTop();
+        // if( $("#popUp").css("display") == "block") {
+        //     scrollPos = $("#popUp").scrollTop();
+        // }
+
         var windowHeight = $(window).height();
-        // console.log( "scrollPos: " + scrollPos);
+        console.log( "scrollPos: " + scrollPos);
         if( scrollPos > (windowHeight * 2 / 3) ) {
              $("#backItUp").fadeIn("slow", function() {
                  $("#backItUp").css("display", "block");
@@ -163,7 +167,10 @@ $(document).ready(function(){
      */
     $(document).on("click","#backItUp", function( event ){
         event.preventDefault();
-        $("html, body").animate({ scrollTop: 0 }, "slow");
+        if( $("#popUp").css("display") == "none")
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+        else
+            $("#popUp").animate({ scrollTop: 0 }, "slow");
     });
 
 //-----------------PORTFLIO FUNCTIONS-----------------\\
@@ -285,6 +292,7 @@ $(document).ready(function(){
             });
             $('html').css('overflow', 'hidden'); //prevent scrolling behind the modal some how
 
+            $("#backItUp").css("display", "block");
         }); //end load callback function
     });
 
@@ -299,6 +307,8 @@ $(document).ready(function(){
         $("#popUp").empty().css("display", "none");
 
         $('html').css('overflow', 'auto'); //allow scrolling
+
+        $("#backItUp").css("display", "none");
 
         //reset URL
         var url = window.location.host;
@@ -344,7 +354,10 @@ $(document).ready(function(){
 
         $('html').css('overflow', 'hidden');
 
-        $('header').css('z-index', '800');
+        //hide navigation
+        // $('header').css('z-index', '800');
+        $("nav").css("visibility", "hidden");
+        $("#backItUp").css("visibility", "hidden");
 
     });
 
@@ -358,8 +371,11 @@ $(document).ready(function(){
         $("#modalDesc").empty();
         $("#imgModal").css("display", "none");
         $(".projFillCont").css("padding-top", "80px");
-        $('header').css('z-index', '10010');
 
+        //reshow navigation
+        // $('header').css('z-index', '10010');
+        $("nav").css("visibility", "visible");
+        $("#backItUp").css("visibility", "visible");
 
         //if we are in the portfolio Modal, prevent creating another scroll bar
         if( $(this).attr("class") == "portImgModal")

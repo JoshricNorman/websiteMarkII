@@ -4,7 +4,7 @@
 
 /*/////////////////////////MAX-WIDTH 500PX/////////////////////////*/
 
-    @media screen and (min-width: 320.1px) and (max-width: 500px) {
+    @media screen and (min-width: 320.1px) and (max-width: 425px) {
 
     /*------------------------ MAIN.CSS ------------------------*/
 
@@ -45,7 +45,23 @@
 
     /*------------------------ ABOUT.CSS ------------------------*/
 
-                #media .intList li {
+        #aboutMe {
+            font-size: 0;
+            visibility: hidden;
+            line-height: 0;
+            width: 95%;
+        }
+        #aboutMe::before {
+            font-size: 12px;
+            font-weight: 800;
+            content: "Hello! The screen you're viewing this on is small, so here's an abridged version: My name is Joshric and I'm a Filipino-American graphic designer. A graduate from UC San Diego, I've had the pleasure of working at a design studio for more than a few years! Get a hold of me if you ever need some work done :)";
+            visibility: visible;
+            line-height: 32px;
+        }
+
+
+
+                .intList li {
                     font-size: 12px;
                     letter-spacing: 0;
                     display: inline-block;
@@ -169,6 +185,11 @@
                             #projDesc {
                                 overflow:visible;
                             }
+
+            #modalDesc {
+                margin-bottom: 15vh;
+                font-size: 18px;
+            }
 
     } /*END MAX-WIDTH 500PX*/
 
@@ -462,5 +483,10 @@
                             #projTags {
                                 display: none;
                             }
+
+                #modalDesc {
+                    margin-bottom: 15vh;
+                    font-size: 18px;
+                }
 
     }  /*END MAX-WIDTH 350PX*/
