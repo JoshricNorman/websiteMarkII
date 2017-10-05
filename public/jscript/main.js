@@ -292,7 +292,7 @@ $(document).ready(function(){
             });
             $('html').css('overflow', 'hidden'); //prevent scrolling behind the modal some how
 
-            $("#backItUp").css("display", "block");
+            $("#backItUp").css("display", "none").css("display", "block");
         }); //end load callback function
     });
 
@@ -323,14 +323,26 @@ $(document).ready(function(){
 //-----------------ABOUT FUNCTIONS-----------------\\
 
     $(document).on("click", "#contactButt", function(){
-        $("html, body").animate({
-            scrollTop: ( $("#contactWrapper").position().top - 150)
+
+
+        $("#contactWrapper").slideDown("fast", function() {
+            $(this).css("opacity", "1");
+
+            $("html, body").animate({
+                scrollTop: ( $("#contactWrapper").position().top - 150)
+            });
+
         });
 
-        $("#contactWrapper").css({
-            "opacity": "1",
-            // "display": "block"
-        });
+
+        // $("html, body").animate({
+        //     scrollTop: ( $("#contactWrapper").position().top - 150)
+        // });
+
+        // $("#contactWrapper").css({
+        //     "opacity": "1",
+        //     // "display": "block"
+        // });
 
     });
 

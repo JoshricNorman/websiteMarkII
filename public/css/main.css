@@ -160,13 +160,11 @@ html {
                         flex-direction: row;
                         font-family: 'Nunito', sans-serif;
                         z-index: 10012;
-
                     }
 
                     nav ul li {
                         margin: 0 1% 0 1%;
                         padding: 3px 3px 5px 3px;
-                        /*background: gray;*/
                         display: block;
                         z-index: 10013;
                     }

@@ -1,8 +1,115 @@
 @charset "utf-8";
 /* CSS Document for the styling based on media queries */
 
+/*/////////////////////////MAX-WIDTH 768PX/////////////////////////*/
 
-/*/////////////////////////MAX-WIDTH 500PX/////////////////////////*/
+    @media screen and (min-width: 425.1px) and (max-width: 768px ) {
+
+        /*------------------------ MAIN.CSS ------------------------*/
+
+        header a {
+            font-size: 24px;
+        }
+
+        nav ul {
+            padding: 30px  15vw 30px 0;
+        }
+
+        #fillContent {
+            padding-top: 103px;
+        }
+
+        button {
+            font-size: 20px;
+            border-width: 5px;
+        }
+
+        h3 { font-size: 36px;}
+
+        h4 { font-size: 28px;}
+
+        h5 { font-size: 22px;}
+
+        h6 { font-size: 18px;}
+
+        p { font-size: 16px;}
+        /*------------------------ INDEX.CSS ------------------------*/
+
+        #slideshowTitle {
+            bottom: 200px;
+        }
+
+        #slideshowButt {
+            bottom: 150px;
+        }
+
+        #slideshowDots {
+            bottom: 65px;
+        }
+
+            .dot{
+                width: 17px;
+                height: 17px;
+                margin: 0 15px;
+            }
+
+        /*------------------------ ABOUT.CSS ------------------------*/
+
+        /*------------------------ RESUME.CSS ------------------------*/
+
+        #whatCanIDo {
+            width: 85vw;
+            margin-top: 5vh;
+        }
+
+        #expertise {
+            width: 85vw;
+        }
+            #expertise h4 {
+                text-align: center;
+            }
+
+            #expBarWrap {
+                min-width: 0;
+                margin: 0;
+                /*justify-content: center;*/
+            }
+
+                .expDet {
+                    margin: 5px 25px;
+                }
+                .expTitle{
+                    font-size: 14px;
+                }
+
+        /*------------------------ PROJECTS.CSS ------------------------*/
+
+        #exitProj{
+            font-size: 24px;
+        }
+
+        #projSide {
+            width: 40%;
+        }
+
+        #projImgs {
+            width: 54%;
+        }
+
+
+
+        #projTags {
+            line-height: 30px;
+        }
+
+            #projTags li {
+                margin: 0 3%;
+            }
+    }
+
+
+/*/////////////////////////MAX-WIDTH 425PX/////////////////////////*/
+
 
     @media screen and (min-width: 320.1px) and (max-width: 425px) {
 
@@ -67,6 +174,11 @@
                     display: inline-block;
                     margin: 0 3vw 0 0;
                 }
+
+                #contactDesc {
+                    display: none;
+                }
+
 
 
 
