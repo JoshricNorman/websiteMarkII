@@ -1,6 +1,56 @@
 @charset "utf-8";
 /* CSS Document for the styling based on media queries */
 
+/*/////////////////////////MAX-WIDTH 1024PX/////////////////////////*/
+    @media screen and (min-width: 768.1px) and (max-width: 1024px ) {
+        /*------------------------ MAIN.CSS ------------------------*/
+
+        button {
+            font-size: 20px;
+            border-width: 5px;
+        }
+        h3 { font-size: 36px;}
+
+        h4 { font-size: 28px;}
+
+        h5 { font-size: 22px;}
+
+        h6 { font-size: 18px;}
+
+        p { font-size: 16px;}
+        /*------------------------ INDEX.CSS ------------------------*/
+
+        #slideshowTitle {
+            bottom: 200px;
+        }
+
+        #slideshowButt {
+            bottom: 150px;
+        }
+        /*------------------------ ABOUT.CSS ------------------------*/
+
+        /*------------------------ RESUME.CSS ------------------------*/
+
+        /*.resumeBullet {
+            margin-top: 32px;
+        }*/
+
+        #expertise {
+            width: 45%;
+        }
+
+        #expBarWrap {
+            min-width: 0;
+        }
+
+        .expTitle {
+            margin-top: 15px;
+        }
+
+        /*------------------------ PROJECTS.CSS ------------------------*/
+
+    }
+
 /*/////////////////////////MAX-WIDTH 768PX/////////////////////////*/
 
     @media screen and (min-width: 425.1px) and (max-width: 768px ) {

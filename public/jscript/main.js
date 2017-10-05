@@ -22,7 +22,9 @@ $(document).ready(function(){
     var cycleTimer; //variable for auto playing slideshow
     var slideshowIndex = 0;
 
-    // const medQ;
+    // $(window).on('beforeunload', function(){
+    //     $("html, body").animate({ scrollTop: 0 }, "fast");
+    // }
 
 //-----------------NAVIGATION-----------------\\
 
