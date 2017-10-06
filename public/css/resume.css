@@ -80,11 +80,15 @@
     }
 
         #whatCanIDo h3 {
-            color: var(--emphasisColor);
+            /*color: var(--emphasisColor);*/
             /*border-bottom: solid 5px var(--detailColor2);*/
             width: 85%;
+            padding: 25px 0  25px 15%;
+            margin: 0;
+            background-color: var(--detailColor2);
+            color: var(--bgColor);
 
-            text-align: right;
+            /*text-align: right;*/
         }
 
         #abilityFlex {
@@ -209,7 +213,7 @@
 
     #resumePDF:hover {
         box-shadow: 10px 10px 10px var(--detailColor1);
-        border: 3px solid var(--emphasisColor);
+        border-color: var(--emphasisColor);
         transition: all 0.5s ease;
         --bounceDist: -3px;
         animation: bounce 1s;

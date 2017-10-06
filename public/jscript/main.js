@@ -287,6 +287,8 @@ $(document).ready(function(){
             });
             $(this).find("#projDetTop").css("border-bottom", "solid 5px var(--detailColor2)");
             $(this).find("#projDate").css("border-left", "solid 5px var(--detailColor2)");
+            $(this).find("#projTitle").css("background-color", "var(--detailColor2)");
+
 
             $("#content").css({
                 "overflow": "hidden",

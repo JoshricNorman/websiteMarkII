@@ -99,12 +99,19 @@
         }
 
             #exitProj {
-                color: var(--detailColor1);
+                /*color: var(--detailColor1);*/
+                color: white;
+                text-shadow: 4px 4px 9px rgba(0, 0, 0, 1);
                 opacity: .5;
                 transition: all 0.5s ease;
                 margin-bottom: 50px;
                 align-self: flex-end;;
                 font-weight: 700;
+                letter-spacing: 2px;
+
+                position: fixed;
+                right: 5%;
+                top: calc( 83px + 5%);
             }
 
             #exitProj:hover {
@@ -130,12 +137,13 @@
                 #projDetTop {
                     border-bottom: solid 5px var(--detailColor1);
                     width: 100%;
-                    /*padding: 5px 0;*/
+                    min-height: 65px;
+                    background-color: var(--detailColor1);
 
                     display: flex;
                     flex-direction: row;
                     flex-wrap: nowrap;
-                    justify-content: space-evenly;
+                    justify-content: space-between;
                     align-items: stretch;
                     align-content: stretch;
                     flex-grow: 1;
@@ -146,10 +154,11 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        /*height: 100%;*/
+
                         width: 65%;
 
                         padding: 0 4%;
+                        flex-grow: 2;
                     }
 
                         #projTitle h5 {
@@ -157,7 +166,7 @@
                             /*height: 100%;*/
 
                             text-align: center;
-                            color: var(--emphasisColor);
+                            color: var(--bgColor);
                             text-transform: uppercase;
                         }
 
@@ -167,12 +176,34 @@
                         width: 35%;
                         /*min-width: 90px;*/
                         max-width: 104px;
-                        background-color: gray;
+                        background-color: var(--bgColor);
                         display: inline-block;
 
                         border-left: solid 5px var(--detailColor1);
 
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                        justify-content: center;
+                        align-items: center;
                     }
+
+                        #projDate h6 {
+                            margin: 0;
+                            color: var(--emphasisColor);
+                            text-align: center;
+                        }
+
+                        #projDate p {
+                            margin: 0;
+                            font-size: 10px;
+
+                            color: var(--emphasisColor);
+                            line-height: 10px;
+                            letter-spacing: 5px;
+                            text-align: center;
+                            margin-right: -5px;
+                        }
 
                 #projDetMid {
                     /*background-color: pink;*/
@@ -246,7 +277,7 @@
 
                     #behanceButt:hover {
                         box-shadow: 10px 10px 10px var(--detailColor1);
-                        border: 3px solid var(--emphasisColor);
+                        border-color: var(--emphasisColor);
                         transition: all 0.5s ease;
                         --bounceDist: -3px;
                         animation: bounce 1s;

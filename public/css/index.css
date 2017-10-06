@@ -202,7 +202,7 @@
 
                         .projectTag {
                             display: block;
-                            color: var(--detailColor2);
+                            color: var(--detailColor1);
                             font-family: "Nunito", sans-serif;
                             font-size: 12px;
                             font-weight: 700;
