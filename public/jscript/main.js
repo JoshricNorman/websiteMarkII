@@ -190,19 +190,19 @@ $(document).ready(function(){
         switch( num ) {
         case 0:
             $("#slideshowImg").css("background-image", "url(../img/joshric_background1_17Aug20.jpg)");
-            $("#slideshowTitle").text( "TITLE 0");
+            $("#slideshowTitle").text( "Title 0");
             break;
         case 1:
             $("#slideshowImg").css("background-image", "url(../img/joshric_background1.jpg)");
-            $("#slideshowTitle").text( "TITLE 1");
+            $("#slideshowTitle").text( "Title 1");
             break;
         case 2:
             $("#slideshowImg").css("background-image", "url(../img/joshric_background2.jpg)");
-            $("#slideshowTitle").text( "TITLE 2");
+            $("#slideshowTitle").text( "Title 2");
             break;
         case 3:
             $("#slideshowImg").css("background-image", "url(../img/joshric_background3.jpg)");
-            $("#slideshowTitle").text( "TITLE 3");
+            $("#slideshowTitle").text( "Title 3");
             break;
         }
 
