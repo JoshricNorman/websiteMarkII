@@ -16,8 +16,6 @@
     #introduction {
         width: 85%;
         padding: 50px 25px 0 25px ;
-        /*margin-bottom: 0;*/
-        /*background-color: green;*/
 
         display: flex;
         flex-direction: row;
@@ -25,7 +23,6 @@
         justify-content: space-around;
         align-items: center;
         align-content: center;
-        /*background-color: purple;*/
     }
 
 
@@ -38,11 +35,13 @@
             background-image: url('../img/joshric_logoWords_17Sep18.png');
             background-repeat: no-repeat;
             background-size: contain;
+            background-position: center;
             display: flex;
             justify-content: center;
             align-content: center;
             align-items: center;
             animation: spin 6s linear infinite;
+
         }
 
         /*KEEPS #circleLogo in 1:1 aspect ratio while allowing max and min width*/
@@ -57,7 +56,8 @@
                 background-repeat: no-repeat;
                 background-size: contain;
                 width: 50%;
-                height: auto;
+                margin: 35px;
+                /*height: auto;*/
                 animation: spin 6s linear infinite;
                 animation-direction: reverse;
             }
@@ -78,7 +78,7 @@
             #aboutMe span {
                 color: var(--detailColor2)
             }
-
+            
     #contactButt {
         background-color: var(--bgColor);
         /*border: 3px solid var(--detailColor2);*/
@@ -137,8 +137,8 @@
     #contactWrapper {
         width: 75%;
         max-width: 650px;
+        margin-bottom: 50px;
         border: solid 5px var(--detailColor2);
-        /*background-color: var(--bgColor);*/
         opacity: 0;
         transition: opacity 2s ease;
         display: none;

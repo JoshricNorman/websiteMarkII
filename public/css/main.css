@@ -70,12 +70,16 @@ html {
 @keyframes bounce {
     from {
         -ms-transform: translate(0px,0px); /* IE 9 */
+        -moz-transform: translate(0px,0px);
         -webkit-transform: translate(0px, 0px); /* Safari */
+        -o-transform: translate(0px,0px);
         transform: translate(0px, 0px);
     }
     to {
         -ms-transform: translate(0px, var(--bounceDist)); /* IE 9 */
+        -moz-transform: translate(0px, var(--bounceDist));
         -webkit-transform: translate(0px, var(--bounceDist)); /* Safari */
+        -o-transform: translate(0px, var(--bounceDist));
         transform: translate(0px, var(--bounceDist));
     }
 }
@@ -83,7 +87,6 @@ html {
     body {
         margin: 0;
         padding: 0;
-        /*height: 100%;*/
         background-color: var(--bgColor);
         transition: background-color 1s ease;
         box-shadow: inset 0 0 250px 0px var(--detailColor1);
@@ -98,8 +101,20 @@ html {
         }
 
         #content {
+            display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+            display: -ms-flexbox;      /* TWEENER - IE 10 */
+            display: -webkit-flex;     /* NEW - Chrome */
             display: flex;
+
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -webkit-box-direction: column;
+            -moz-box-direction: column;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
             flex-direction: column;
+
             flex-wrap: nowrap;
             justify-content: space-between;
             align-items: center;
@@ -201,6 +216,7 @@ html {
                        margin: auto;
                        width: 75%;
                        height: 3px;
+                       background-color: #3E0660;  /*backup color*/
                        background-color: var(--navColor);
                        bottom: -10px;
 
@@ -218,6 +234,7 @@ html {
 
                 #fillContent {
                     padding: 83px 0 0 0;
+                    /*margin-bottom: 7%;*/
                     display: flex;
                     flex-direction: column;
                     flex-wrap: nowrap;
@@ -225,10 +242,6 @@ html {
                     align-items: center;
                     width: 100%
                 }
-
-                    /*#fillContent > div {
-                        margin-bottom: 100px;
-                    }*/
 
             footer {
                 margin: 15% 5% 10px 5%;
