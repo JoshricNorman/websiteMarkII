@@ -140,17 +140,15 @@ $(document).ready(function(){
      });
 
      /* Function to:
-      * Reveal backItUp when page scrolls passed window height
-      * hide backItUp when page is within window height
+      * - Reveal backItUp when page scrolls passed window height
+      * - hide backItUp when page is within window height
+      * - trigger animations when on the screen
       */
     $(window).on('scroll', function( event ) {
         var scrollPos = $(document).scrollTop();
-        // if( $("#popUp").css("display") == "block") {
-        //     scrollPos = $("#popUp").scrollTop();
-        // }
 
         var windowHeight = $(window).height();
-        console.log( "scrollPos: " + scrollPos);
+        // console.log( "scrollPos: " + scrollPos);
         if( scrollPos > (windowHeight * 2 / 3) ) {
              $("#backItUp").fadeIn("slow", function() {
                  $("#backItUp").css("display", "block");
@@ -162,6 +160,26 @@ $(document).ready(function(){
                 $("#backItUp").css("display", "none");
             });
         }
+
+        //animate anime obj when on screen, else, reset animation
+        // var testPos = $("#test").position().top;
+        // console.log( "testPos: " + testPos);
+
+        $(".anime").each( function( index )  {
+
+            //only animate if it is not on, do nothing otherwise
+            if( $(this).hasClass("animeOn") == false ) {
+                var top_of_element = $(this).offset().top;
+                var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+                var bottom_of_screen = $(window).scrollTop() + $(window).height();
+                var top_of_screen = $(window).scrollTop();
+
+                //check if we are in the screen, if so animate
+                if( (bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element) )
+                    $(this).removeClass("animeOff").addClass("animeOn");
+            }
+        });
+
     });
 
     /* Function to:

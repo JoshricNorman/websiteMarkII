@@ -118,9 +118,9 @@
             }
 
                 .abilityImg {
-                    width: 50px;
-                    height: 50px;
-                    background-color: gray;
+                    width: 75px;
+                    height: auto;
+                    /*background-color: gray;*/
 
                 }
 
@@ -196,7 +196,11 @@
                         .expBar {
                             height: 99%;
                             background-color: var(--emphasisColor);
+                            animation: underline 1.5s;
+                            transform-origin: left;
                         }
+
+
 
             #achievements {
             }
