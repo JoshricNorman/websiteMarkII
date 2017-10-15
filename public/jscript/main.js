@@ -94,7 +94,7 @@ $(document).ready(function(){
                 document.body.style.setProperty( '--bgColor', pink);
                 document.body.style.setProperty( '--detailColor1', mauve);
                 document.body.style.setProperty( '--detailColor2', red);
-                document.body.style.setProperty( '--emphasisColor', snot);
+                document.body.style.setProperty( '--emphasisColor', purple);
             }
          }
 

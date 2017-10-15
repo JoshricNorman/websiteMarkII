@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html id="indexTheme">
+<html id="projectsTheme">
     <head>
 
         <!--Favicons -->
@@ -9,10 +9,12 @@
 
         <!--Style sheets -->
         <link rel="stylesheet" type="text/css" href="css/rootStyle.css"/>
+        <!-- <link rel="stylesheet" type="text/css" href="css/index.css"/> -->
+
 
         <!-- Scripts -->
-        <script src="jscript/jquery-3.2.1.min.js"></script>
-        <script src="jscript/main.js"></script>
+        <script src="../jscript/jquery-3.2.1.min.js"></script>
+        <script src="../jscript/main.js"></script>
 
         <!-- Meta Tags -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,12 +38,14 @@
         </div>
 
         <div id="content">
+            <!-- <div id="headerGlass"> </div> -->
+
             <a href="#"><div id="backItUp">&#10140;</div></a>
 
             <header>
                 <nav>
                     <ul>
-                        <li id="activeNav">
+                        <li id="activeNav" class="projectActiveNav">
                             <a href="/portfolio" target="_self" id="portNav" class="navButt">PORTFOLIO</a>
                         </li>
 
@@ -59,111 +63,80 @@
             <!-- CONTENT TO BE FILLED W/ AJAX -->
             <div id="contentWrapper">
                 <div id="fillContent">
-                    <div id="slideshow">
-                        <div id="slideshowImg">
-                            <!-- <img src=""> -->
-                        </div>
-
-                        <h3 id="slideshowTitle">Slideshow Title</h3>
-
-                        <a href="/temp"><button id="slideshowButt">VIEW MORE</button></a>
-
-                        <div id="slideshowDots">
-                            <div class="dot activeDot" id="dot0"></div>
-
-                            <div class="dot" id="dot1"></div>
-
-                            <div class="dot" id="dot2"></div>
-
-                            <div class="dot" id="dot3"></div>
-                        </div>
+                    <div id="imgModal">
+                        <img id="modalImg"src="">
+                        <h4 id="modalDesc">Image Desciption</h4>
                     </div>
 
-                    <div id="projectFlexBox">
-                        <div class="projectContainer" id="logos1">
-                            <a href="/logos1" target="_blank" class="projectImg"
-                             style="background-image: url('/img/logos1/behance_Logos1Cover_16Mar25.jpg')">
-                            </a>
+                    <a href="/portfolio" id="exitProj">EXIT &#10005;</a>
 
-                            <div class="projectInfo">
-                                <h5 class="projectTitle">Associated Students EJA</h5>
+                    <div id="projEnvelope">
+                        <div id="projImgs">
+                            <img class="projImg" alt="My first Bear Garden Poster" src="/img/bearGarden13-15/ASCE_BGJan_14.jpg">
+                            <img class="projImg" alt="March 2014" src="/img/bearGarden13-15/ASCE_BGMarch_14.jpg">
+                            <img class="projImg" alt="April 2014" src="/img/bearGarden13-15/ASCE_BGApr_14.jpg">
+                            <img class="projImg" alt="June 2014" src="/img/bearGarden13-15/ASCE_BGJune_14.jpg">
+                            <img class="projImg" alt="November 2014" src="/img/bearGarden13-15/ASCE_BGNov_14.jpg">
+                            <img class="projImg" alt="January 2015" src="/img/bearGarden13-15/ASCE_BGJan_15.jpg">
+                            <img class="projImg" alt="March 2015" src="/img/bearGarden13-15/ASCE_BGMarch_15.jpg">
+                            <img class="projImg" alt="June 2015" src="/img/bearGarden13-15/ASCE_BGSenior_15May22OL.jpg">
+                            <img class="projImg" alt="Bear Garden Map Front" src="/img/bearGarden13-15/ASCE_BGMap_15Apr13OL.jpg">
+                            <img class="projImg" alt="Bear Garden Map Back" src="/img/bearGarden13-15/ASCE_BGMap_Back_15Apr13OL.jpg">
 
-                                <div class="projectExtra">
-                                    <span class="projectTags">
-                                        <p class="projectTag">Logos</p>
-                                    </span>
+
+                        </div>
+
+                        <div id="projSide">
+                            <!-- <a href="/portfolio" id="exitProj">EXIT &#10005;</a> -->
+
+                            <div id="projDets">
+                                <div id="projDetTop">
+                                    <div id="projTitle">
+                                        <h5>Bear Garden 2013-15</h5>
+                                    </div>
+
+                                    <div id="projDate">
+                                        <h6></h6>
+                                        <p>2013-15</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div> <!--END PROJECT-->
 
-                        <div class="projectContainer" id="EnvJustAff">
-                            <a href="/ASEJA" target="_blank" class="projectImg"
-                             style="background-image: url('/img/AS_EJA/behance_AS_EJAHead_16Mar25.jpg')">
-                            </a>
+                                <div id="projDetMid">
+                                    <p id="projDesc">
+                                        Bear Garden designs from my start at A.S. Graphic Studio in
+                                        2013 to the end of the school year at 2015.
+                                        This is before I started researching character design and
+                                        animation techniques, so these bears aren't as lively.
+                                        But they're still cute!
+                                    </p>
 
-                            <div class="projectInfo">
-                                <h5 class="projectTitle">Associated Students EJA</h5>
-
-                                <div class="projectExtra">
-                                    <span class="projectTags">
-                                        <p class="projectTag">Logos</p>
-
-                                        <p class="projectTag">Branding</p>
-
-                                        <p class="projectTag">Promos</p>
-                                    </span>
+                                    <ul id="projTags">
+                                        <li>Art Direction</li>
+                                        <li>Illustration</li>
+                                        <li>Character Design</li>
+                                    </ul>
                                 </div>
-                            </div>
-                        </div> <!--END PROJECT-->
 
-                        <div class="projectContainer" id="photoStuds1">
-                            <a href="/photoStudies1" target="_blank" class="projectImg"
-                             style="background-image: url('/img/photoStudies1/15Apr5.jpg')">
-                            </a>
+                                <div id="projDetBott">
+                                    <div id="prevProj">
+                                    </div>
 
-                            <div class="projectInfo">
-                                <h5 class="projectTitle">Photo Studies 1</h5>
+                                    <a href="https://www.behance.net/gallery/23858241/Bear-Garden-2014-15" target="_blank">
+                                        <button id="behanceButt">VIEW ON BEHANCE</button>
+                                    </a>
 
-                                <div class="projectExtra">
-                                    <span class="projectTags">
-                                        <p class="projectTag">Illustration</p>
-
-                                        <p class="projectTag">Digital Painting</p>
-
-                                        <p class="projectTag">Portraits</p>
-                                    </span>
+                                    <div id="nextProj">
+                                    </div>
                                 </div>
-                            </div>
-                        </div> <!--END PROJECT-->
-
-                        <div class="projectContainer" id="bg1315">
-                            <a href="/bearGarden1315" target="_blank" class="projectImg"
-                             style="background-image: url('/img/bearGarden13-15/bg1315_preview.jpg')">
-                            </a>
-
-                            <div class="projectInfo">
-                                <h5 class="projectTitle">Bear Garden 2013-15</h5>
-
-                                <div class="projectExtra">
-                                    <span class="projectTags">
-                                        <p class="projectTag">Illustration</p>
-
-                                        <p class="projectTag">Art Direction</p>
-
-                                        <p class="projectTag">Character Design</p>
-                                    </span>
-
-                                </div>
-                            </div>
-                        </div> <!--END PROJECT-->
-                    </div>
-                    <!--END PROJECT FLEXBOX -->
+                            </div> <!--END projDets -->
+                        </div> <!--END projSide -->
+                    </div> <!--END projEnvelope -->
                 </div>
                 <!-- END FILL CONTENT -->
             </div>
             <!-- END CONTENT WRAPPER -->
 
-            <footer>
+            <footer class="projFoot">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
                 	 x="0px" y="0px" width="230.2px" height="250px" viewBox="0 0 230.2 250" xml:space="preserve" id="svgLogo">
                     	<path class="joshricLogo" d="M226.8,155c-3.6-7-9.6-12.1-16.9-14.8c2.5-5.1,5.2-10.4,8-16.1c2.5-5,4.8-15.3,4.8-15.3l1.7-12.4
@@ -276,7 +249,7 @@
                 </div>
             </footer>
 
-            <p class="footerText">
+            <p class="footerText projFootText">
                 &copy;2017 Joshric Aurea
                 <span> Powered by Myself</span>
             </p>

@@ -30,15 +30,20 @@
     }
 
         #modalImg {
-            width: 75vw;
+            /*width: 75vw;
             max-width: 900px;
-            height: auto;
-            padding-top: 100px;
-
+            height: auto;*/
+            height: 75vh;
+            max-height: 700px;
+            width: auto;
+            padding-top: 3vh;
+            flex-grow: 2;
         }
 
         #modalDesc {
+            flex-grow: 1;
             color: white;
+            font-size: 14px;
             margin-bottom: 5%;
         }
 
@@ -73,6 +78,7 @@
                 /*height: 300px;
                 width: 200px;*/
                 width: 95%;
+                max-width: 700px;
                 height: auto;
                 margin-bottom: 25px;
                 background-color: gray;
@@ -101,12 +107,12 @@
             #exitProj {
                 /*color: var(--detailColor1);*/
                 color: white;
-                text-shadow: 4px 4px 9px rgba(0, 0, 0, 1);
-                opacity: .5;
+                text-shadow: 0px 0px 7px rgba(0, 0, 0, 1);
+                opacity: .8;
                 transition: all 0.5s ease;
                 margin-bottom: 50px;
                 align-self: flex-end;;
-                font-weight: 700;
+                font-weight: 900;
                 letter-spacing: 2px;
 
                 position: fixed;
@@ -115,8 +121,10 @@
             }
 
             #exitProj:hover {
-                color: var(--emphasisColor);
+                color: var(--fave);
                 opacity: 1;
+                text-shadow: 0px 0px 7px rgba(255, 255, 255, 1);
+
                 transition: all 0.5s ease;
             }
 
@@ -124,7 +132,7 @@
                 /*margin-top: 250px;*/
                 border: solid 5px var(--detailColor1);
                 width:  95%;
-                height: 65%;
+                height: 75%;
 
                 display: flex;
                 flex-direction: column;
@@ -199,9 +207,10 @@
 
                             color: var(--emphasisColor);
                             line-height: 10px;
-                            letter-spacing: 5px;
+                            letter-spacing: 2px;
+                            /*font-weight: 800;*/
                             text-align: center;
-                            margin-right: -5px;
+                            margin-right: -2px;
                         }
 
                 #projDetMid {
@@ -226,6 +235,8 @@
                         overflow: hidden;
                         max-height: 250px;
                         display: inline-block;
+                        font-size: 12px;
+                        font-weight: 700;
                     }
 
                     #projTags {
@@ -234,15 +245,16 @@
                         font-weight: 700;
                         font-size: 11px;
                         letter-spacing: 1px;
+                        line-height: 24px;
                         text-transform: uppercase;
                         text-align: center;
-                        padding: 15px 0;
+                        padding: 15px 8%;
                         margin: 0;
                         color: var(--detailColor1);
                     }
 
                         #projTags li {
-                            display: inline;
+                            display: inline-block;
                             margin: 0 1.5%;
                         }
 

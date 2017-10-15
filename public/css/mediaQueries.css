@@ -340,7 +340,7 @@
                     #exitProj {
                         margin: 15px 25px 15px 0px;
                         font-size: 22px;
-                        color: var(--emphasisColor);
+                        /*color: var(--emphasisColor);*/
                         top: 5vh;
                     }
 
@@ -632,7 +632,7 @@
                     #exitProj {
                         margin: 15px 25px 15px 0px;
                         font-size: 22px;
-                        color: var(--emphasisColor);
+                        /*color: var(--emphasisColor);*/
                         top: 5vh;
                     }
 

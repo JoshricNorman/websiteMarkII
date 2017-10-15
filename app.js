@@ -19,17 +19,29 @@ app.get('/resume', function( req, res) {
     res.sendFile(path.join(__dirname + '/resume.html'));
 });
 
-app.get('/portfolio/temp', function( req, res) {
-    res.sendFile(path.join(__dirname + '/projects/projectTemplate.html'));
-});
+//portfolio URLs
 
 app.get('/temp', function( req, res) {
     res.sendFile(path.join(__dirname + '/projects/projectTemplate.html'));
 });
 
+app.get('/bearGarden1315', function( req, res) {
+    res.sendFile(path.join(__dirname + '/projects/bearGarden1315.html'));
+});
+
+app.get('/photoStudies1', function( req, res) {
+    res.sendFile(path.join(__dirname + '/projects/photoStudies1.html'));
+});
+
+app.get('/ASEJA', function( req, res) {
+    res.sendFile(path.join(__dirname + '/projects/associatedStudentsEJA.html'));
+});
+
+app.get('/logos1', function( req, res) {
+    res.sendFile(path.join(__dirname + '/projects/logos1.html'));
+});
 
 
- // END PORTFOLIO PROJECTS
 
 app.use(express.static(__dirname + '/public'));
 

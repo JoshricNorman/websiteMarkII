@@ -5,7 +5,7 @@
     --bgColor: var(--pink);
     --detailColor1: var(--mauve);
     --detailColor2: var(--red);
-    --emphasisColor: var(--snot);
+    --emphasisColor: var(--purple);
 
     --navColor: var(--red);
     --hoverNavColor: var(--navColor);
@@ -76,27 +76,29 @@
             .dot {
                 width: 13px;
                 height: 13px;
-                background-color: transparent;
-                border: solid var(--detailColor1) 3px;
+                background-color: var(--detailColor1);
+
                 border-radius: 50%;
                 -moz-box-sizing: border-box;
                 -webkit-box-sizing: border-box;
                 box-sizing: border-box;
 
                 margin: 0 10px;
-                transition: color 0.5s ease;
-                transition: background-color 0.5s ease;
-                -webkit-animation-fill-mode: backwards; /* Safari 4.0 - 8.0 */
-
+                transition: all 0.5s ease;
                 cursor: pointer;
+            }
+
+            .dot:hover {
+                background-color: var(--emphasisColor);
+                transition: all 0.5s ease;
+
             }
 
             .activeDot {
                 background-color: var(--detailColor2);
                 border: none;
 
-                transition: color 0.5s ease;
-                transition: background-color 0.5s ease;
+                transition: all 0.5s ease;
                 animation: bounce 1s;
                 -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
                 animation-fill-mode: forwards;
@@ -171,9 +173,14 @@
                 .projectTitle {
                     color: var(--emphasisColor);
                     text-align: center;
-                    padding: 10%;
+                    padding: 7%;
                     margin: 0;
+                    font-size: 18px;
                     border-bottom: solid 5px var(--detailColor2);
+                    overflow: hidden;
+                    white-space: nowrap;
+                    font-weight: normal;
+
                 }
 
                 .projectExtra {
@@ -195,7 +202,7 @@
                         display: flex;
                         flex-direction: row;
                         flex-wrap: nowrap;
-                        justify-content: space-between;
+                        justify-content: space-around;
                         align-items: center;
                         align-content: center;
                     }
@@ -204,7 +211,7 @@
                             display: block;
                             color: var(--detailColor1);
                             font-family: "Nunito", sans-serif;
-                            font-size: 12px;
+                            font-size: 9px;
                             font-weight: 700;
 
                         }
@@ -220,10 +227,5 @@
                         text-decoration: none;
 
                         opacity: .45;
-                        transition: opacity 0.5s ease;
-                    }
-
-                    .projectInfo a:hover {
-                        opacity: 1;
                         transition: opacity 0.5s ease;
                     }
