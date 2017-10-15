@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html id="indexTheme">
+<html id="projectsTheme">
     <head>
 
         <!--Favicons -->
@@ -9,10 +9,12 @@
 
         <!--Style sheets -->
         <link rel="stylesheet" type="text/css" href="css/rootStyle.css"/>
+        <!-- <link rel="stylesheet" type="text/css" href="css/index.css"/> -->
+
 
         <!-- Scripts -->
-        <script src="jscript/jquery-3.2.1.min.js"></script>
-        <script src="jscript/main.js"></script>
+        <script src="../jscript/jquery-3.2.1.min.js"></script>
+        <script src="../jscript/main.js"></script>
 
         <!-- Meta Tags -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,12 +38,14 @@
         </div>
 
         <div id="content">
+            <!-- <div id="headerGlass"> </div> -->
+
             <a href="#"><div id="backItUp">&#10140;</div></a>
 
             <header>
                 <nav>
                     <ul>
-                        <li id="activeNav">
+                        <li id="activeNav" class="projectActiveNav">
                             <a href="/portfolio" target="_self" id="portNav" class="navButt">PORTFOLIO</a>
                         </li>
 
@@ -59,201 +63,98 @@
             <!-- CONTENT TO BE FILLED W/ AJAX -->
             <div id="contentWrapper">
                 <div id="fillContent">
-                    <div id="slideshow">
-                        <div id="slideshowImg">
-                            <!-- <img src=""> -->
-                        </div>
-
-                        <h3 id="slideshowTitle">Slideshow Title</h3>
-
-                        <a href="/temp"><button id="slideshowButt">VIEW MORE</button></a>
-
-                        <div id="slideshowDots">
-                            <div class="dot activeDot" id="dot0"></div>
-
-                            <div class="dot" id="dot1"></div>
-
-                            <div class="dot" id="dot2"></div>
-
-                            <div class="dot" id="dot3"></div>
-                        </div>
+                    <div id="imgModal">
+                        <img id="modalImg"src="">
+                        <h4 id="modalDesc">Image Desciption</h4>
                     </div>
 
-                    <div id="projectFlexBox">
-                        <div class="projectContainer" id="tritonTracker">
-                            <a href="/tritonTracker" target="_blank" class="projectImg"
-                             style="background-image: url('/img/tritonTracker/TritonTrackerPreview.jpg')">
-                            </a>
+                    <a href="/portfolio" id="exitProj">EXIT &#10005;</a>
 
-                            <div class="projectInfo">
-                                <h5 class="projectTitle">Triton Tracker</h5>
+                    <div id="projEnvelope">
+                        <div id="projImgs">
+                            <img class="projImg" alt="" src="/img/bearGarden15-16/BG_15-16_header.jpg">
 
-                                <div class="projectExtra">
-                                    <span class="projectTags">
-                                        <p class="projectTag">Branding</p>
-                                        <p class="projectTag">Web Design</p>
-                                        <p class="projectTag">Print Design</p>
-                                    </span>
+                            <img class="projImg" alt="October 2015 - Pirate theme" src="/img/bearGarden15-16/ASCE_BGOct_2015Aug13_Poster.jpg">
+
+                            <img class="projImg" alt="November 2015 - Autumn theme" src="/img/bearGarden15-16/ASCE_BGNov_2015Oct5_poster.jpg">
+
+                            <img class="projImg" alt="January 2016 - Rapunzel theme" src="/img/bearGarden15-16/ASCE_BGJan_2016Jan6_poster.jpg">
+
+                            <img class="projImg" alt="March 2016 - Atlantis theme" src="/img/bearGarden15-16/ASCE_BGFeb_2016Feb23_poster.jpg">
+
+                            <img class="projImg" alt="June 2016 - Senior Send Off" src="/img/bearGarden15-16/ASCE_BGSenior_2016June17_poster.jpg">
+
+                            <img class="projImg" alt="All Bear Garden posters from 2015-16" src="/img/bearGarden15-16/bearGarden1516_together.png">
+
+                            <img class="projImg" alt="Bear Garden calendar" src="/img/bearGarden15-16/BG_15-16_calendar.jpg">
+
+                            <img class="projImg" alt="" src="/img/bearGarden15-16/BG_15-16_misc.png">
+
+                            <img class="projImg" alt="Bear Garden Snapchat geofilter" src="/img/bearGarden15-16/BG_15-16_geofilter.png">
+
+                            <img class="projImg" alt="" src="/img/bearGarden15-16/BG_15-16_geofilterPrev.jpg">
+
+                            <img class="projImg" alt="" src="/img/bearGarden15-16/bg1516_sf.jpg">
+
+                            <img class="projImg" alt="" src="/img/bearGarden15-16/bg1516_ny.jpg">
+
+                            <img class="projImg" alt="" src="/img/bearGarden15-16/bg1516_japan.jpg">
+
+                            <img class="projImg" alt="Bear Garden stickers!" src="/img/bearGarden15-16/BG_15-16_stickers.png">
+
+                        </div>
+
+                        <div id="projSide">
+                            <!-- <a href="/portfolio" id="exitProj">EXIT &#10005;</a> -->
+
+                            <div id="projDets">
+                                <div id="projDetTop">
+                                    <div id="projTitle">
+                                        <h5>Bear Garden 2015-16</h5>
+                                    </div>
+
+                                    <div id="projDate">
+                                        <h6>JUNE</h6>
+                                        <p>2016</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div> <!--END PROJECT-->
 
-                        <div class="projectContainer" id="sgf">
-                            <a href="/sunGodFestival2017" target="_blank" class="projectImg"
-                             style="background-image: url('/img/SGF17/SGF_BehanceCover_17June3.jpg')">
-                            </a>
+                                <div id="projDetMid">
+                                    <p id="projDesc">
+                                        This was my final year working on Bear Garden graphics.
+                                        For these posters, I really wanted to push myself- creating
+                                        different facial expressions and poses for certain bears. I also began
+                                        experimenting with lighting. While I wasn't specifically asked to,
+                                        I tried to incorporate Disney in each design :)
+                                    </p>
 
-                            <div class="projectInfo">
-                                <h5 class="projectTitle">Sun God Festival 2017</h5>
-
-                                <div class="projectExtra">
-                                    <span class="projectTags">
-                                        <p class="projectTag">Art Direction</p>
-                                        <p class="projectTag">Character Design</p>
-                                        <p class="projectTag">Web Design</p>
-                                    </span>
+                                    <ul id="projTags">
+                                        <li>Art Direction</li>
+                                        <li>Branding</li>
+                                        <li>Illustation</li>
+                                    </ul>
                                 </div>
-                            </div>
-                        </div> <!--END PROJECT-->
 
-                        <div class="projectContainer" id="redCross">
-                            <a href="/redCross" target="_blank" class="projectImg"
-                             style="background-image: url('/img/redCross/rc_preview.jpg')">
-                            </a>
+                                <div id="projDetBott">
+                                    <div id="prevProj">
+                                    </div>
 
-                            <div class="projectInfo">
-                                <h5 class="projectTitle">Red Cross: More Campaign</h5>
+                                    <a href="https://www.behance.net/gallery/55307847/Bear-Garden-2015-16c" target="_blank">
+                                        <button id="behanceButt">VIEW ON BEHANCE</button>
+                                    </a>
 
-                                <div class="projectExtra">
-                                    <span class="projectTags">
-                                        <p class="projectTag">Advertising</p>
-                                        <p class="projectTag">Art Direction</p>
-                                        <p class="projectTag">Web Design</p>
-                                    </span>
+                                    <div id="nextProj">
+                                    </div>
                                 </div>
-                            </div>
-                        </div> <!--END PROJECT-->
-
-                        <div class="projectContainer" id="lucerne">
-                            <a href="/lucerneRepackaging" target="_blank" class="projectImg"
-                             style="background-image: url('/img/lucerne/lucerne_preview.jpg')">
-                            </a>
-
-                            <div class="projectInfo">
-                                <h5 class="projectTitle">Lucerne Repackaging</h5>
-
-                                <div class="projectExtra">
-                                    <span class="projectTags">
-                                        <p class="projectTag">Packaging</p>
-                                        <p class="projectTag">Art Direction</p>
-                                        <p class="projectTag">Branding</p>
-                                    </span>
-                                </div>
-                            </div>
-                        </div> <!--END PROJECT-->
-
-                        <div class="projectContainer" id="bg1516">
-                            <a href="/bearGarden1516" target="_blank" class="projectImg"
-                             style="background-image: url('/img/bearGarden15-16/BG_15-16_preview.jpg')">
-                            </a>
-
-                            <div class="projectInfo">
-                                <h5 class="projectTitle">Bear Garden 2015-16</h5>
-
-                                <div class="projectExtra">
-                                    <span class="projectTags">
-                                        <p class="projectTag">Illustration</p>
-                                        <p class="projectTag">Art Direction</p>
-                                        <p class="projectTag">Character Design</p>
-                                    </span>
-                                </div>
-                            </div>
-                        </div> <!--END PROJECT-->
-
-                        <div class="projectContainer" id="logos1">
-                            <a href="/logos1" target="_blank" class="projectImg"
-                             style="background-image: url('/img/logos1/behance_Logos1Cover_16Mar25.jpg')">
-                            </a>
-
-                            <div class="projectInfo">
-                                <h5 class="projectTitle">Logos 1</h5>
-
-                                <div class="projectExtra">
-                                    <span class="projectTags">
-                                        <p class="projectTag">Logos</p>
-                                    </span>
-                                </div>
-                            </div>
-                        </div> <!--END PROJECT-->
-
-                        <div class="projectContainer" id="EnvJustAff">
-                            <a href="/ASEJA" target="_blank" class="projectImg"
-                             style="background-image: url('/img/AS_EJA/behance_AS_EJAHead_16Mar25.jpg')">
-                            </a>
-
-                            <div class="projectInfo">
-                                <h5 class="projectTitle">Associated Students EJA</h5>
-
-                                <div class="projectExtra">
-                                    <span class="projectTags">
-                                        <p class="projectTag">Logos</p>
-
-                                        <p class="projectTag">Branding</p>
-
-                                        <p class="projectTag">Promos</p>
-                                    </span>
-                                </div>
-                            </div>
-                        </div> <!--END PROJECT-->
-
-                        <div class="projectContainer" id="photoStuds1">
-                            <a href="/photoStudies1" target="_blank" class="projectImg"
-                             style="background-image: url('/img/photoStudies1/15Apr5.jpg')">
-                            </a>
-
-                            <div class="projectInfo">
-                                <h5 class="projectTitle">Photo Studies 1</h5>
-
-                                <div class="projectExtra">
-                                    <span class="projectTags">
-                                        <p class="projectTag">Illustration</p>
-
-                                        <p class="projectTag">Digital Painting</p>
-
-                                        <p class="projectTag">Portraits</p>
-                                    </span>
-                                </div>
-                            </div>
-                        </div> <!--END PROJECT-->
-
-                        <div class="projectContainer" id="bg1315">
-                            <a href="/bearGarden1315" target="_blank" class="projectImg"
-                             style="background-image: url('/img/bearGarden13-15/bg1315_preview.jpg')">
-                            </a>
-
-                            <div class="projectInfo">
-                                <h5 class="projectTitle">Bear Garden 2013-15</h5>
-
-                                <div class="projectExtra">
-                                    <span class="projectTags">
-                                        <p class="projectTag">Illustration</p>
-
-                                        <p class="projectTag">Art Direction</p>
-
-                                        <p class="projectTag">Character Design</p>
-                                    </span>
-
-                                </div>
-                            </div>
-                        </div> <!--END PROJECT-->
-                    </div>
-                    <!--END PROJECT FLEXBOX -->
+                            </div> <!--END projDets -->
+                        </div> <!--END projSide -->
+                    </div> <!--END projEnvelope -->
                 </div>
                 <!-- END FILL CONTENT -->
             </div>
             <!-- END CONTENT WRAPPER -->
 
-            <footer>
+            <footer class="projFoot">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
                 	 x="0px" y="0px" width="230.2px" height="250px" viewBox="0 0 230.2 250" xml:space="preserve" id="svgLogo">
                     	<path class="joshricLogo" d="M226.8,155c-3.6-7-9.6-12.1-16.9-14.8c2.5-5.1,5.2-10.4,8-16.1c2.5-5,4.8-15.3,4.8-15.3l1.7-12.4
@@ -366,7 +267,7 @@
                 </div>
             </footer>
 
-            <p class="footerText">
+            <p class="footerText projFootText">
                 &copy;2017 Joshric Aurea
                 <span> Powered by Myself</span>
             </p>

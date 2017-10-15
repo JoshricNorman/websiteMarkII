@@ -41,6 +41,26 @@ app.get('/logos1', function( req, res) {
     res.sendFile(path.join(__dirname + '/projects/logos1.html'));
 });
 
+app.get('/bearGarden1516', function( req, res) {
+    res.sendFile(path.join(__dirname + '/projects/bearGarden1516.html'));
+});
+
+app.get('/lucerneRepackaging', function( req, res) {
+    res.sendFile(path.join(__dirname + '/projects/lucerne.html'));
+});
+
+app.get('/redCross', function( req, res) {
+    res.sendFile(path.join(__dirname + '/projects/redCrossMore.html'));
+});
+
+app.get('/sunGodFestival2017', function( req, res) {
+    res.sendFile(path.join(__dirname + '/projects/sgf17.html'));
+});
+
+app.get('/tritonTracker', function( req, res) {
+    res.sendFile(path.join(__dirname + '/projects/tritonTracker.html'));
+});
+
 
 
 app.use(express.static(__dirname + '/public'));
