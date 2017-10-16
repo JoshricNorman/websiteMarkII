@@ -126,8 +126,19 @@ $(document).ready(function(){
         $("#contentWrapper").empty();
         //replace it with new content **NOTE: maintain space b/w url and #mainContent
         //in order to prevent loading the entire page
-        $("#contentWrapper").load(url + " #fillContent").hide().fadeIn('slow');
 
+        //$("#contentWrapper").load(url + " #fillContent").hide().fadeIn('slow');
+
+        // $('footer').hide( 'fast', function() {
+        //     $("#contentWrapper").load(url + " #fillContent").hide().fadeIn('slow', function () {
+        //             $('footer').show();
+        //     });
+        // });
+
+        $('footer').hide();
+        $("#contentWrapper").load(url + " #fillContent").hide().fadeIn('slow', function () {
+                  $('footer').show();
+         });
         //stop slideshow timer if it is available
         clearTimeout(cycleTimer);
         if( pageName == "portfolio") {
