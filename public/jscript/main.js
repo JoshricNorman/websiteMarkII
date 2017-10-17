@@ -168,11 +168,12 @@ $(document).ready(function(){
         // var testPos = $("#test").position().top;
         // console.log( "testPos: " + testPos);
 
-        $(".anime").each( function( index )  {
+        $.each( $(".anime"), function () {
+        // $(".anime").each( function( index )  {
             console.log( "In .each function!!")
 
             //only animate if it is not on, do nothing otherwise
-            if( $(this).hasClass("animeOn") == false ) {
+            if( $(this).hasClass("animeOff") ) {
                 var top_of_element = $(this).offset().top;
                 var bottom_of_element = $(this).offset().top + $(this).outerHeight();
                 var bottom_of_screen = $(window).scrollTop() + $(window).height();
@@ -182,7 +183,11 @@ $(document).ready(function(){
 
                 //check if we are in the screen, if so animate
                 if( (bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element) ) {
-                    $(this).removeClass("animeOff").addClass("animeOn");
+                    //remove classes to prevent firing this function entirely, add class to trigger animation
+                    $(this).removeClass("animeOff").css({
+                        "animation-play-state": "running",
+                        "-webkit-animation-play-state": "running"
+                    }).removeClass("anime").addClass("animeOn");
                     console.log( "In check bounds if!!")
                 }
             }
