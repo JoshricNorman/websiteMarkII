@@ -142,6 +142,16 @@ $(document).ready(function(){
         $("html, body").animate({ scrollTop: 0 }, "fast");
      });
 
+
+     /* Function to:
+      * -force a redraw of an element by hiding then showing it right away
+      */
+     $.fn.forceRedraw = function() {
+         return this.hide(0, function() {
+            $(this).show();
+         });
+     }
+
      /* Function to:
       * - Reveal backItUp when page scrolls passed window height
       * - hide backItUp when page is within window height
@@ -187,7 +197,7 @@ $(document).ready(function(){
                     $(this).removeClass("animeOff").css({
                         "animation-play-state": "running",
                         "-webkit-animation-play-state": "running"
-                    }).removeClass("anime").addClass("animeOn");
+                    }).forceRedraw().removeClass("anime").addClass("animeOn");
                     console.log( "In check bounds if!!")
                 }
             }

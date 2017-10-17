@@ -13,7 +13,7 @@
 
 
 .animeOff {
-    -webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
+    -webkit-animation-play-state: running; /* Safari 4.0 - 8.0 auto set the animation to running if we can't fix it i guess */
     animation-play-state: paused;
 }
 
