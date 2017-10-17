@@ -127,15 +127,7 @@ $(document).ready(function(){
         //replace it with new content **NOTE: maintain space b/w url and #mainContent
         //in order to prevent loading the entire page
 
-        //$("#contentWrapper").load(url + " #fillContent").hide().fadeIn('slow');
-
-        // $('footer').hide( 'fast', function() {
-        //     $("#contentWrapper").load(url + " #fillContent").hide().fadeIn('slow', function () {
-        //             $('footer').show();
-        //     });
-        // });
-
-        $('footer').hide();
+        $('footer').hide(1);
         $("#contentWrapper").load(url + " #fillContent").hide().fadeIn('slow', function () {
                   $('footer').show();
          });
@@ -177,6 +169,7 @@ $(document).ready(function(){
         // console.log( "testPos: " + testPos);
 
         $(".anime").each( function( index )  {
+            console.log( "In .each function!!")
 
             //only animate if it is not on, do nothing otherwise
             if( $(this).hasClass("animeOn") == false ) {
@@ -185,9 +178,13 @@ $(document).ready(function(){
                 var bottom_of_screen = $(window).scrollTop() + $(window).height();
                 var top_of_screen = $(window).scrollTop();
 
+                console.log( "In .hasClass if!!")
+
                 //check if we are in the screen, if so animate
-                if( (bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element) )
+                if( (bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element) ) {
                     $(this).removeClass("animeOff").addClass("animeOn");
+                    console.log( "In check bounds if!!")
+                }
             }
         });
 
