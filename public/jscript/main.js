@@ -175,32 +175,25 @@ $(document).ready(function(){
         }
 
         //animate anime obj when on screen, else, reset animation
-        // var testPos = $("#test").position().top;
-        // console.log( "testPos: " + testPos);
-
         $.each( $(".anime"), function () {
-        // $(".anime").each( function( index )  {
-            console.log( "In .each function!!")
+            var top_of_element = $(this).offset().top;
+            var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_screen = $(window).scrollTop() + $(window).height();
+            var top_of_screen = $(window).scrollTop();
 
-            //only animate if it is not on, do nothing otherwise
-            if( $(this).hasClass("animeOff") ) {
-                var top_of_element = $(this).offset().top;
-                var bottom_of_element = $(this).offset().top + $(this).outerHeight();
-                var bottom_of_screen = $(window).scrollTop() + $(window).height();
-                var top_of_screen = $(window).scrollTop();
-
-                console.log( "In .hasClass if!!")
-
-                //check if we are in the screen, if so animate
-                if( (bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element) ) {
-                    //remove classes to prevent firing this function entirely, add class to trigger animation
-                    $(this).removeClass("animeOff").css({
-                        "animation-play-state": "running",
-                        "-webkit-animation-play-state": "running"
-                    }).forceRedraw().removeClass("anime").addClass("animeOn");
-                    console.log( "In check bounds if!!")
+            //check if in screen first
+            if( (bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element) ) {
+                if( $(this).hasClass("anUnderline") ) {
+                    $(this).css({
+                        "animation": "underline 1.5s",
+                        "-webkit-animation-play-state": "running",
+                        "animation-play-state": "running"
+                    });
                 }
+                //once animated, remove the need to check for it
+                $(this).removeClass("anime");
             }
+
         });
 
     });

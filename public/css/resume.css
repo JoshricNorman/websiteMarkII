@@ -196,7 +196,6 @@
                         .expBar {
                             height: 99%;
                             background-color: var(--emphasisColor);
-                            animation: underline 1.5s;
                             transform-origin: left;
                         }
 
