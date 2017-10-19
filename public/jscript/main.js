@@ -302,8 +302,13 @@ $(document).ready(function(){
         var rootURL = url.split("/")[0];
         var newURL = "http://" + rootURL + projPage;
         history.pushState(null, null, newURL);
+
+        $('#popUp').scrollTop(0); //reset scroll so we're always at the top of the project images
+
         //load project info
         $("#popUp").load(newURL + " #fillContent", function () {
+
+
 
             //restyle project stuff
             $(this).css("display", "block");
@@ -311,7 +316,7 @@ $(document).ready(function(){
             $(this).find("#projEnvelope").css({
                 "background-color": "rgba(255, 255, 255, 0.75)",
             });
-            $(this).find("#projImgs").css("margin-top", "100px");
+            $(this).find("#projImgs").css("margin-top", "100px").scrollTop(0);
             $(this).find("#imgModal").addClass("portImgModal"); //prevents creating another scrollbar
 
             //restyle popup
@@ -342,11 +347,13 @@ $(document).ready(function(){
      */
     $(document).on("click", ".portExitProj", function( event ) {
         event.preventDefault();
+
         $("#popUp").empty().css("display", "none");
 
         $('html').css('overflow', 'auto'); //allow scrolling
 
         $("#backItUp").css("display", "none");
+
 
         //reset URL
         var url = window.location.host;
