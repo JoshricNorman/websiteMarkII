@@ -85,6 +85,15 @@ html {
     }
 }
 
+@keyframes animateBG {
+    from {
+        background-position: 0 bottom;
+    }
+    to {
+        background-position: 300px bottom;
+    }
+}
+
     body {
         margin: 0;
         padding: 0;

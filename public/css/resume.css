@@ -14,11 +14,11 @@
     #resumeHeadImg {
         width: 100%;
         height: 300px;
-        /*background-color: gray;*/
         background-image: url('../img/joshric_resumePattern_17Oct24.png');
         background-repeat: repeat;
-        background-size: 500px 500px;
-        background-position: center bottom;
+        background-size: 300px 300px;
+        background-position: 0px bottom;
+        animation: animateBG 10s linear infinite;
     }
 
     #eduWork {

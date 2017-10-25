@@ -211,6 +211,7 @@ $(document).ready(function(){
                             "animation-direction": "alternate",
                             "animation-fill-mode": "forwards",
                             "display": "inline-block",
+                            "-webkit-animation-delay": String(i/30) + "s",
                             "animation-delay": String(i/30) + "s",
                             "white-space": "pre-wrap",
                         });
