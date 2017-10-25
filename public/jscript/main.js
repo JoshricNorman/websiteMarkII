@@ -190,6 +190,34 @@ $(document).ready(function(){
                         "animation-play-state": "running"
                     });
                 }
+                else if (  $(this).hasClass("anWaveText") ) {
+                    var str = $(this).text();
+                    var strLength = str.length;
+                    var letters = str.split('');
+                    var $anWaveText = $(this);
+                    $(this).empty(); //empty the text we are making wave
+
+                    //reinsert each char into the original string but w/ enclosing span tags
+                    $.each( letters, function(_, letter) {
+                         $('<span>', {text: letter}).appendTo($anWaveText);
+                    });
+
+                    //for each spanned char, animate it with a delay
+                    for( i = 0; i <= strLength; i++) {
+                        $(':nth-child(' + i +')', this).css({
+                            "animation": "bounce 0.5s ease-in-out infinite",
+                            "-webkit-animation-play-state": "running",
+                            "animation-play-state": "running",
+                            "animation-direction": "alternate",
+                            "animation-fill-mode": "forwards",
+                            "display": "inline-block",
+                            "animation-delay": String(i/30) + "s",
+                            "white-space": "pre-wrap",
+                        });
+                    }
+
+
+                }
                 //once animated, remove the need to check for it
                 $(this).removeClass("anime");
             }

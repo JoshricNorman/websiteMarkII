@@ -74,9 +74,11 @@
             /*background-color: orange;*/
             padding: 7% 5% 0 5%;
             max-width: 900px;
+            font-size: 24px;
         }
-            #aboutMe span {
-                color: var(--detailColor2)
+            #aboutDesc {
+                color: var(--detailColor2);
+                font-size: 16px;
             }
 
     #contactButt {
