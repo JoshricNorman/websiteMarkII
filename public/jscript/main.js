@@ -253,19 +253,23 @@ $(document).ready(function(){
         switch( num ) {
         case 0:
             $("#slideshowImg").css("background-image", "url(../img/joshric_background1_17Aug20.jpg)");
-            $("#slideshowTitle").text( "Title 0");
+            $("#slideshowTitle").text( "Triton Tracker");
+            $("#slideshowButt").val("/tritonTracker")
             break;
         case 1:
             $("#slideshowImg").css("background-image", "url(../img/joshric_background1.jpg)");
-            $("#slideshowTitle").text( "Title 1");
+            $("#slideshowTitle").text( "Sun God 2017");
+            $("#slideshowButt").val("/sunGodFestival2017")
             break;
         case 2:
             $("#slideshowImg").css("background-image", "url(../img/joshric_background2.jpg)");
-            $("#slideshowTitle").text( "Title 2");
+            $("#slideshowTitle").text( "Red Cross More Campaign");
+            $("#slideshowButt").val("/redCross")
             break;
         case 3:
             $("#slideshowImg").css("background-image", "url(../img/joshric_background3.jpg)");
-            $("#slideshowTitle").text( "Title 3");
+            $("#slideshowTitle").text( "Lucerene");
+            $("#slideshowButt").val("/lucerneRepackaging")
             break;
         }
 
@@ -317,6 +321,52 @@ $(document).ready(function(){
      *  - display correct project page when clicking on viewMore
      *  similar to clicking on project Container
      */
+     $(document).on("click", "#slideshowButt", function( event ) {
+        //  var buttClick = $(this).onclick;
+        //  $(this).onclick = false;
+
+        //  var projPage = $(this).attr('value').split("'")[1];
+        var projPage = $(this).attr('value');
+
+         console.log( projPage );
+         var url = window.location.host;
+         var rootURL = url.split("/")[0];
+         var newURL = "http://" + rootURL + projPage;
+         history.pushState(null, null, newURL);
+
+         $('#popUp').scrollTop(0); //reset scroll so we're always at the top of the project images
+
+         //load project info
+         $("#popUp").load(newURL + " #fillContent", function () {
+             //restyle project stuff
+             $(this).css("display", "block");
+             $(this).find("#exitProj").css("display", "block").addClass("portExitProj");
+             $(this).find("#projEnvelope").css({
+                 "background-color": "rgba(255, 255, 255, 0.75)",
+             });
+             $(this).find("#projImgs").css("margin-top", "100px").scrollTop(0);
+             $(this).find("#imgModal").addClass("portImgModal"); //prevents creating another scrollbar
+
+             //restyle popup
+             $(this).find("#projDets").css({
+                 "border": "solid 5px var(--detailColor2)",
+                 "margin-top": "0"
+             });
+             $(this).find("#projDetTop").css("border-bottom", "solid 5px var(--detailColor2)");
+             $(this).find("#projDate").css("border-left", "solid 5px var(--detailColor2)");
+             $(this).find("#projTitle").css("background-color", "var(--detailColor2)");
+
+
+             $("#content").css({
+                 "overflow": "hidden",
+                 "overflow-y": "hidden"
+             });
+             $('html').css('overflow', 'hidden'); //prevent scrolling behind the modal some how
+
+             $("#backItUp").css("display", "none").css("display", "block");
+         }); //end load callback function
+     });
+
 
 
     /* Function to:
@@ -336,9 +386,6 @@ $(document).ready(function(){
 
         //load project info
         $("#popUp").load(newURL + " #fillContent", function () {
-
-
-
             //restyle project stuff
             $(this).css("display", "block");
             $(this).find("#exitProj").css("display", "block").addClass("portExitProj");
@@ -367,6 +414,7 @@ $(document).ready(function(){
             $("#backItUp").css("display", "none").css("display", "block");
         }); //end load callback function
     });
+
 
 
     /* Function to:
