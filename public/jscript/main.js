@@ -1,3 +1,26 @@
+
+/* Function to:
+ * - stick the footer to the bottom of the page
+ */
+function stickFooter() {
+    var contentBott = $("#content").offset().top + $("#content").outerHeight();
+    var viewPortBott = $(window).scrollTop() + $(window).height();
+    // var viewPortBott = $("html").offset().top + $("html").outerHeight();
+
+    if( contentBott  < viewPortBott) {
+        var currFootMargTop = $("footer").css("margin-top");
+        $("footer").css("margin-top",  parseInt(currFootMargTop.split("px")[0]) + viewPortBott - contentBott + "px");
+    }
+}
+
+
+/* Function to:
+ * - stick the footer to the bottom of the page when page is loaded
+ */
+// $(window).on('load', function(){
+//     stickFooter();
+// });
+
 $(document).ready(function(){
 
     var bodyStyles = window.getComputedStyle(document.body);
@@ -22,9 +45,7 @@ $(document).ready(function(){
     var cycleTimer; //variable for auto playing slideshow
     var slideshowIndex = 0;
 
-    // $(window).on('beforeunload', function(){
-    //     $("html, body").animate({ scrollTop: 0 }, "fast");
-    // }
+    stickFooter();
 
 //-----------------NAVIGATION-----------------\\
 
@@ -59,7 +80,6 @@ $(document).ready(function(){
      */
      $(document).on("click", ".navButt", function( event ){
         event.preventDefault();
-
 
         var clickNavButt = $(this).attr("id");
 
@@ -130,6 +150,8 @@ $(document).ready(function(){
         $('footer').hide(1);
         $("#contentWrapper").load(url + " #fillContent").hide().fadeIn('slow', function () {
                   $('footer').show();
+                  stickFooter();
+
          });
         //stop slideshow timer if it is available
         clearTimeout(cycleTimer);
@@ -144,7 +166,7 @@ $(document).ready(function(){
 
 
      /* Function to:
-      * -force a redraw of an element by hiding then showing it right away
+      * - force a redraw of an element by hiding then showing it right away
       */
      $.fn.forceRedraw = function() {
          return this.hide(0, function() {
@@ -190,7 +212,7 @@ $(document).ready(function(){
                         "animation-play-state": "running"
                     });
                 }
-                else if (  $(this).hasClass("anWaveText") ) {
+                if (  $(this).hasClass("anWaveText") ) {
                     var str = $(this).text();
                     var strLength = str.length;
                     var letters = str.split('');
@@ -216,9 +238,41 @@ $(document).ready(function(){
                             "white-space": "pre-wrap",
                         });
                     }
+                } //end anWaveText
 
-
+                if ( $(this).hasClass("anFadeIn") ) {
+                    $(this).css("display", "none").fadeIn("slow", "swing");
                 }
+
+                if (  $(this).hasClass("anBounceText") ) {
+                    var str = $(this).text();
+                    var strLength = str.length;
+                    var letters = str.split('');
+                    var $anBounceText = $(this);
+                    $(this).empty(); //empty the text we are making wave
+
+                    //reinsert each char into the original string but w/ enclosing span tags
+                    $.each( letters, function(_, letter) {
+                         $('<span>', {text: letter}).appendTo($anBounceText);
+                    });
+
+                    //for each spanned char, animate it with a delay
+                    for( i = 0; i <= strLength; i++) {
+                        $(':nth-child(' + i +')', this).css({
+                            "animation": "bounce 0.5s ease-in-out",
+                            "-webkit-animation-play-state": "running",
+                            "animation-play-state": "running",
+                            "animation-direction": "alternate",
+                            "animation-fill-mode": "forwards",
+                            "display": "inline-block",
+                            "-webkit-animation-delay": String(i/20) + "s",
+                            "animation-delay": String(i/20) + "s",
+                            "white-space": "pre-wrap",
+                            "-webkit-animation-iteration-count": "4",
+                            "animation-iteration-count": "4"
+                        });
+                    }
+                } //end anBounceText
                 //once animated, remove the need to check for it
                 $(this).removeClass("anime");
             }
