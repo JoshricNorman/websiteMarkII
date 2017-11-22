@@ -44,6 +44,7 @@ $(document).ready(function(){
 
     var cycleTimer; //variable for auto playing slideshow
     var slideshowIndex = 0;
+    var slideshowDir = 1;
 
     stickFooter();
 
@@ -334,7 +335,8 @@ $(document).ready(function(){
      */
     function cycleSlides() {
         //increment our place in the slideshow, loopback if neccessary
-        slideshowIndex++;
+        // slideshowIndex++;
+        slideshowIndex += (slideshowDir);
         if( slideshowIndex > 3) slideshowIndex = 0;
         // console.log( "curr slide: " + slideshowIndex);
 
@@ -369,6 +371,17 @@ $(document).ready(function(){
         cycleTimer = setTimeout(function() {cycleSlides();}, 7000);
         $("html, body").animate({ scrollTop: 0 }, "slow");
     });
+
+
+    $("#slideshowImg").slick({
+
+    })
+
+    $("#slideshowImg").on("swipe", function(event, slick, direction) {
+        console.log(direction);
+    });
+
+
 
 
     /* TODO Function to:
