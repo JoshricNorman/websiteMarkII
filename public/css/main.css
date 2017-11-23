@@ -6,26 +6,37 @@
 :root {
 
     /*Custom Properties for theme colors*/
-    --pink: #FBBFC9;
-    --mauve: #B85279;
-    --red: #F1593B;
-    --sky: #8290F4;
-    --blue: #5750EF;
-    --purple: #592CEF;
-    --yellow: #FECF5C;
-    --gold: #F78E1E;
-    --spring: #EBEF9C;
-    --green: #A3D783;
-    --snot: #82BB00;
-    --fave: #3E0660;
+    --plum: #3E0660;
 
-    --navColor: var(--red);           /*Change on click in jquery */
+    --ribbon: #F9CDD7;
+    --rose: #FB96C9;
+    --wine: #6F0356;
+
+    --coral: #FCB7AC;
+    --salmon: #FE5737;
+    --tuna: #DA3637;
+
+    --sky: #BFB0F7;
+    --lake: #8679EA;
+    --ocean: #592CEF;
+    --abyss: #4F07AD;
+
+    --mint: #EAFCE3;
+    --aloe: #B1C3B3;
+    --grass: #3F8906;
+    --pine: #163005;
+
+    --lemon: #FCD57E;
+    --honey: #DB8407;
+
+    --bg: var(--ribbon);
+    --side: var(--rose);
+    --hero: var(--salmon);
+    --foil: var(--sky);
+    --villain: var(--abyss);
+
+    --navColor: var(--salmon);           /*Change on click in jquery */
     --hoverNavColor: var(--navColor); /*Change on hover in jquery*/
-
-    --bgColor: var(--pink);
-    --detailColor1: var(--mauve);
-    --detailColor2: var(--red);
-    --emphasisColor: var(--snot);
 
     --bounceDist: -15px;
 }
@@ -97,9 +108,9 @@ html {
     body {
         margin: 0;
         padding: 0;
-        background-color: var(--bgColor);
+        background-color: var(--bg);
         transition: background-color 1.5s ease;
-        box-shadow: inset 0 0 250px 0px var(--detailColor1);
+        box-shadow: inset 0 0 250px 0px var(--side);
     }
         #popUp {
             display: none;
@@ -138,7 +149,7 @@ html {
             #backItUp {
                 width: 50px;
                 height: 50px;
-                background-color: var(--detailColor1);
+                background-color: var(--side);
                 opacity: .75;
                 border-radius: 50%;
                 position: fixed;
@@ -146,7 +157,7 @@ html {
                 right: 50px;
                 bottom: 175px;
 
-                color: var(--bgColor);
+                color: var(--bg);
                 text-align: center;
                 line-height: 53px;
                 font-family: 'Nunito', sans-serif;
@@ -196,25 +207,25 @@ html {
 
                         nav ul li a {
                             text-decoration: none;
-                            color: var(--fave);
+                            color: var(--plum);
                             transition: color 1s ease;
                             font-weight: 800;
                         }
 
                         nav ul li #portNav:hover {
-                            --hoverNavColor: var(--red);
+                            --hoverNavColor: var(--salmon);
                             color: var(--hoverNavColor);
                             transition: color 1s ease;
                         }
 
                         nav ul li #aboutNav:hover {
-                            --hoverNavColor: var(--purple);
+                            --hoverNavColor: var(--honey);
                             color: var(--hoverNavColor);
                             transition: color 1s ease;
                         }
 
                         nav ul li #resumeNav:hover {
-                            --hoverNavColor: var(--gold);
+                            --hoverNavColor: var(--grass);
                             color: var(--hoverNavColor);
                             transition: color 1s ease;
                         }
@@ -257,8 +268,8 @@ html {
                 margin: 15% 5% 10px 5%;
                 padding: 15px 0;
                 /*background-color: orange;*/
-                border-bottom: solid 3px var(--detailColor1);
-                border-top: solid 3px var(--detailColor1);
+                border-bottom: solid 3px var(--side);
+                border-top: solid 3px var(--side);
 
                 display: flex;
                 flex-direction: row;
@@ -288,7 +299,7 @@ html {
                 }
 
                     .joshricLogo {
-                        fill: var(--detailColor1);
+                        fill: var(--side);
                     }
 
                 #socialMedia {
@@ -323,11 +334,11 @@ html {
                     }
 
                         .socMedButtFill {
-                            fill: var(--detailColor1);
+                            fill: var(--side);
                         }
 
             .footerText {
-                color: var(--detailColor1);
+                color: var(--side);
                 font-family: "Nunito", sans-serif;
                 font-weight: 600;
                 font-size: 16px;
@@ -390,7 +401,7 @@ p b {
 }
 
 a {
-    color: var(--emphasisColor);
+    color: var(--hero);
     font-family: "Nunito", sans-serif;
     font-size: 16px;
     font-weight: 600;
@@ -406,7 +417,7 @@ button {
     border-radius:  7px;
     padding: 10px 15px;
     font-family: 'Nunito', sans-serif;
-    color: var(--detailColor2);
+    color: var(--side);
     font-weight: 900;
     font-size: 12px;
     letter-spacing: 3px;
@@ -423,7 +434,7 @@ button:hover {
     background-color: rgba(255, 255, 255, 1);
     /*transition: opacity 0.5s ease;
     transition: background-color 0.5s ease;*/
-    color: var(--emphasisColor);
+    color: var(--hero);
     /*transition: color 0.2s ease;*/
 
     transition: all 0.2s ease;

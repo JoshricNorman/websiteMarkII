@@ -2,13 +2,14 @@
 /*CSS Document for Portfolio styling*/
 
 #indexTheme {
-    --bgColor: var(--pink);
-    --detailColor1: var(--mauve);
-    --detailColor2: var(--red);
-    --emphasisColor: var(--purple);
+    --bg: var(--ribbon);
+    --side: var(--rose);
+    --hero: var(--salmon);
+    --foil: var(--sky);
+    --villain: var(--abyss);
 
-    --navColor: var(--red);
-    --hoverNavColor: var(--navColor);
+    --navColor: var(--salmon);           /*Change on click in jquery */
+    --hoverNavColor: var(--navColor); /*Change on hover in jquery*/
 }
 
 #portfolioFill {
@@ -25,7 +26,7 @@
         #slideshowImg {
             width: 100%;
             height: 100%;
-            background-color: var(--detailColor1);
+            background-color: var(--side);
 
             background-image: url("../img/joshric_background1_17Aug20.jpg");
             background-attachment: fixed;
@@ -80,7 +81,7 @@
             .dot {
                 width: 13px;
                 height: 13px;
-                background-color: var(--detailColor1);
+                background-color: var(--side);
 
                 border-radius: 50%;
                 -moz-box-sizing: border-box;
@@ -93,13 +94,13 @@
             }
 
             .dot:hover {
-                background-color: var(--emphasisColor);
+                background-color: var(--hero);
                 transition: all 0.5s ease;
 
             }
 
             .activeDot {
-                background-color: var(--detailColor2);
+                background-color: var(--villain);
                 border: none;
 
                 transition: all 0.5s ease;
@@ -126,11 +127,11 @@
             align-items: center;
             align-content: center;
 
-            background-color: var(--bgColor);
+            background-color: var(--bg);
             margin: 25px 1%;
             width: 300px;
 
-            box-shadow: 0px 0px 0px var(--detailColor1);
+            box-shadow: 0px 0px 0px var(--side);
             transition: box-shadow 0.5s ease;
 
             cursor: pointer;
@@ -140,7 +141,7 @@
             animation: bounce 1s;
             animation-fill-mode: forwards;
 
-            box-shadow: 15px 15px 15px var(--detailColor1);
+            box-shadow: 15px 15px 15px var(--side);
             transition: box-shadow 0.5s ease;
         }
 
@@ -167,7 +168,7 @@
 
 
             .projectInfo {
-                border: solid 5px var(--detailColor2);
+                border: solid 5px var(--hero);
                 border-top: none;
                 width: 100%;
 
@@ -178,12 +179,12 @@
             }
 
                 .projectTitle {
-                    color: var(--emphasisColor);
+                    color: var(--villain);
                     text-align: center;
                     padding: 7%;
                     margin: 0;
                     font-size: 18px;
-                    border-bottom: solid 5px var(--detailColor2);
+                    border-bottom: solid 5px var(--hero);
                     overflow: hidden;
                     white-space: nowrap;
                     font-weight: normal;
@@ -216,23 +217,8 @@
 
                         .projectTag {
                             display: block;
-                            color: var(--detailColor1);
+                            color: var(--hero);
                             font-family: "Nunito", sans-serif;
                             font-size: 9px;
                             font-weight: 700;
-
                         }
-
-                    .projectInfo a {
-                        width: 30%;
-
-                        color: var(--emphasisColor);
-                        font-family: "Nunito", sans-serif;
-                        font-size: 30px;
-                        font-weight: 900;
-                        text-align: center;
-                        text-decoration: none;
-
-                        opacity: .45;
-                        transition: opacity 0.5s ease;
-                    }

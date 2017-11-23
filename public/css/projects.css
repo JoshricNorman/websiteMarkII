@@ -3,13 +3,14 @@
 
 
 #projectsTheme {
-    --bgColor: var(--sky);
-    --detailColor1: var(--purple);
-    --detailColor2: var(--fave);
-    --emphasisColor: var(--pink);
+    --bg: var(--ribbon);
+    --side: var(--rose);
+    --hero: var(--salmon);
+    --foil: var(--sky);
+    --villain: var(--abyss);
 
-    --navColor: var(--red);
-    --hoverNavColor: var(--navColor);
+    --navColor: var(--salmon);           /*Change on click in jquery */
+    --hoverNavColor: var(--navColor); /*Change on hover in jquery*/
 }
 
 
@@ -50,7 +51,7 @@
     #projEnvelope {
         height: 100%;
         width: 100%;
-        background: var(--emphasisColor);
+        background: var(--bg);
 
         display: flex;
         flex-direction: row-reverse;
@@ -89,7 +90,7 @@
         #projSide {
             width: 34%;
             height: 100%;
-            background-color: var(--bgColor);
+            background-color: var(--foil);
             padding: 50px 3%;
 
             position: fixed;
@@ -121,7 +122,7 @@
             }
 
             #exitProj:hover {
-                color: var(--fave);
+                color: var(--plum);
                 opacity: 1;
                 text-shadow: 0px 0px 7px rgba(255, 255, 255, 1);
 
@@ -130,7 +131,7 @@
 
             #projDets {
                 /*margin-top: 250px;*/
-                border: solid 5px var(--detailColor1);
+                border: solid 5px var(--villain);
                 width:  95%;
                 height: 75%;
 
@@ -143,11 +144,11 @@
             }
 
                 #projDetTop {
-                    border-bottom: solid 5px var(--detailColor1);
+                    border-bottom: solid 5px var(--villain);
                     width: 100%;
                     min-height: 65px;
                     max-height: 125px;
-                    background-color: var(--detailColor1);
+                    background-color: var(--villain);
 
                     display: flex;
                     flex-direction: row;
@@ -175,7 +176,7 @@
                             /*height: 100%;*/
 
                             text-align: center;
-                            color: var(--bgColor);
+                            color: var(--foil);
                         }
 
 
@@ -184,10 +185,10 @@
                         width: 35%;
                         /*min-width: 90px;*/
                         max-width: 104px;
-                        background-color: var(--bgColor);
+                        background-color: var(--foil);
                         display: inline-block;
 
-                        border-left: solid 5px var(--detailColor1);
+                        border-left: solid 5px var(--villain);
 
                         display: flex;
                         flex-direction: column;
@@ -198,7 +199,7 @@
 
                         #projDate h6 {
                             margin: 0;
-                            color: var(--emphasisColor);
+                            color: var(--bg);
                             text-align: center;
                         }
 
@@ -206,7 +207,7 @@
                             margin: 0;
                             font-size: 10px;
 
-                            color: var(--emphasisColor);
+                            color: var(--bg);
                             line-height: 10px;
                             letter-spacing: 2px;
                             /*font-weight: 800;*/
@@ -230,7 +231,7 @@
                 }
 
                     #projDesc {
-                        color: var(--detailColor2);
+                        color: var(--villain);
                         padding: 0 8%;
                         text-overflow: ellipsis;
                         overflow: hidden;
@@ -251,7 +252,7 @@
                         text-align: center;
                         padding: 15px 8%;
                         margin: 0;
-                        color: var(--detailColor1);
+                        color: var(--bg);
                     }
 
                         #projTags li {
@@ -277,10 +278,11 @@
                     #prevProj {}
 
                     #behanceButt {
-                        background-color: var(--bgColor);
+                        background-color: var(--foil);
                         /*border: 3px solid var(--detailColor2);*/
-                        border-color: var(--detailColor2);
-                        box-shadow: 0px 0px 0px var(--detailColor1);
+                        border-color: var(--bg);
+                        box-shadow: 0px 0px 0px var(--villain);
+                        color: var(--bg);
                         transition: box-shadow 0.5s ease;
                         margin: 15px auto;
 
@@ -288,8 +290,9 @@
                     }
 
                     #behanceButt:hover {
-                        box-shadow: 10px 10px 10px var(--detailColor1);
-                        border-color: var(--emphasisColor);
+                        box-shadow: 10px 10px 10px var(--villain);
+                        border-color: var(--hero);
+                        color: var(--hero);
                         transition: all 0.5s ease;
                         --bounceDist: -3px;
                         animation: bounce 1s;

@@ -2,12 +2,13 @@
 /*CSS Document for Resume styling*/
 
 #resumeTheme {
-    --bgColor: var(--spring);
-    --detailColor1: var(--green);
-    --detailColor2: var(--snot);
-    --emphasisColor: var(--gold);
+    --bg: var(--mint);
+    --side: var(--aloe);
+    --hero: var(--pine);
+    --foil: var(--ribbon);
+    --villain: var(--tuna);
 
-    --navColor: var(--gold);
+    --navColor: var(--grass);
     --hoverNavColor: var(--navColor);
 }
 
@@ -44,7 +45,7 @@
         }
 
             .resumeInfo h4 {
-                color: var(--emphasisColor);
+                color: var(--villain);
                 margin: 5px;
                 /*text-transform: uppercase;*/
             }
@@ -55,17 +56,17 @@
 
                 .resumeTitle {
                     margin: 2px 0;
-                    color: var(--detailColor2);
+                    color: var(--hero);
                 }
 
                 .resumeDesc {
-                    color: var(--emphasisColor);
+                    color: var(--side);
                     margin: 5px 10px;
                     line-height: 20px;
                 }
 
                     .resumeDesc b {
-                        color: var(--detailColor1);
+                        color: var(--foil);
                     }
 
     #whatCanIDo {
@@ -76,7 +77,7 @@
         align-items: center;
         align-content: center;
 
-        border: solid 5px var(--detailColor2);
+        border: solid 5px var(--foil);
 
         width: 95%;
         max-width: 1100px;
@@ -89,14 +90,14 @@
             width: 85%;
             padding: 25px 0  25px 15%;
             margin: 0;
-            background-color: var(--detailColor2);
-            color: var(--bgColor);
+            background-color: var(--foil);
+            color: var(--bg);
 
             /*text-align: right;*/
         }
 
         #abilityFlex {
-            border-top: solid 5px var(--detailColor2);
+            border-top: solid 5px var(--foil);
             width: 100%;
             padding: 50px 0;
 
@@ -133,12 +134,12 @@
                 }
 
                     .abilityTitle {
-                        color: var(--emphasisColor);
+                        color: var(--hero);
                         margin: 0 0 3px 0;
                     }
 
                     .abilityDesc {
-                        color: var(--detailColor2);
+                        color: var(--side);
                         margin-top: 0;
                         max-width: 330px;
                         font-size: 12px;
@@ -159,17 +160,10 @@
     }
 
         #expertise {
-            /*background-color: purple;*/
             width: 55%;
             max-width: 850px;
-            /*padding: 10px;*/
             margin-bottom: 75px;
         }
-
-            /*#expertise h4 {
-                color: var(--emphasisColor);
-                margin: 0;
-            }*/
 
             #expBarWrap {
                 display: flex;
@@ -188,18 +182,18 @@
                 }
 
                     .expTitle {
-                        color: var(--detailColor2)
+                        color: var(--side)
                     }
 
                     .expBarBG {
                         height: 6px;
                         width: 150px;
-                        background-color: var(--detailColor1);
+                        background-color: var(--side);
                     }
 
                         .expBar {
                             height: 99%;
-                            background-color: var(--emphasisColor);
+                            background-color: var(--villain);
                             transform-origin: left;
                         }
 
@@ -209,17 +203,17 @@
             }
 
     #resumePDF {
-        background-color: var(--bgColor);
+        background-color: var(--bg);
         /*border: 3px solid var(--detailColor2);*/
-        border-color: var(--detailColor2);
-        box-shadow: 0px 0px 0px var(--detailColor1);
+        border-color: var(--side);
+        box-shadow: 0px 0px 0px var(--side);
         transition: box-shadow 0.5s ease;
         margin: 75px auto 25px auto;
     }
 
     #resumePDF:hover {
-        box-shadow: 10px 10px 10px var(--detailColor1);
-        border-color: var(--emphasisColor);
+        box-shadow: 10px 10px 10px var(--hero);
+        border-color: var(--hero);
         transition: all 0.5s ease;
         --bounceDist: -3px;
         animation: bounce 1s;

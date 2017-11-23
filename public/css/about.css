@@ -3,12 +3,13 @@
 
 
 #aboutTheme {
-    --bgColor: var(--yellow);
-    --detailColor1: var(--gold);
-    --detailColor2: var(--red);
-    --emphasisColor: var(--purple);
+    --bg: var(--lemon);
+    --side: var(--salmon);
+    --hero: var(--wine);
+    --foil: var(--lake);
+    --villain: var(--ocean);
 
-    --navColor: var(--purple);
+    --navColor: var(--honey);
     --hoverNavColor: var(--navColor);
 }
 
@@ -17,7 +18,7 @@
         width: 85%;
         padding: 50px 25px 0 25px ;
 
-        display: flex;
+        display: flex;a
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -69,7 +70,7 @@
             }
 
         #aboutMe {
-            color: var(--emphasisColor);
+            color: var(--villain);
 
             /*background-color: orange;*/
             padding: 7% 5% 0 5%;
@@ -77,22 +78,22 @@
             font-size: 24px;
         }
             #aboutDesc {
-                color: var(--detailColor2);
+                color: var(--hero);
                 font-size: 16px;
             }
 
     #contactButt {
-        background-color: var(--bgColor);
+        background-color: var(--bg);
         /*border: 3px solid var(--detailColor2);*/
-        border-color: var(--detailColor2);
-        box-shadow: 0px 0px 0px var(--detailColor1);
+        border-color: var(--side);
+        box-shadow: 0px 0px 0px var(--side);
         transition: box-shadow 0.5s ease;
         margin: 45px auto;
     }
 
     #contactButt:hover {
-        box-shadow: 10px 10px 10px var(--detailColor1);
-        border-color: var(--emphasisColor);
+        box-shadow: 10px 10px 10px var(--side);
+        border-color: var(--hero);
         transition: all 0.5s ease;
         --bounceDist: -3px;
         animation: bounce 1s;
@@ -118,7 +119,7 @@
         }
 
             .intTitle {
-                color: var(--emphasisColor);
+                color: var(--villain);
             }
 
             .intList {
@@ -133,14 +134,14 @@
                     font-weight: 600;
                     letter-spacing: 1px;
                     line-height: 32px;
-                    color: var(--detailColor2);
+                    color: var(--side);
                 }
 
     #contactWrapper {
         width: 75%;
         max-width: 650px;
         margin-bottom: 50px;
-        border: solid 5px var(--detailColor2);
+        border: solid 5px var(--hero);
         opacity: 0;
         transition: opacity 2s ease;
         display: none;
@@ -149,8 +150,8 @@
         #contactDesc {
             padding: 25px 45px;
             margin: 0;
-            color: var(--emphasisColor);
-            border-bottom: solid 5px var(--detailColor2);
+            color: var(--hero);
+            border-bottom: solid 5px var(--hero);
         }
 
         #contactInfo {
@@ -165,8 +166,8 @@
             #contactImp {
                 height: 100%;
                 width: 50%;
-                border-right: solid 5px var(--detailColor2);
-                border-bottom: solid 5px var(--detailColor2);
+                border-right: solid 5px var(--hero);
+                border-bottom: solid 5px var(--hero);
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -207,7 +208,7 @@
                 }
 
                     #emailPrompt h4 {
-                        color: var(--detailColor2);
+                        color: var(--villain);
                         /*border-right: solid 5px var(--detailColor2);*/
                         height: 80%;
                         width: 100%;
@@ -247,7 +248,7 @@
                     font-size: 14px;
                     font-weight: 600;
                     line-height: 32px;
-                    color: var(--detailColor2);
+                    color: var(--side);
 
                 }
 

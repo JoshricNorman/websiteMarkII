@@ -27,19 +27,31 @@ $(document).ready(function(){
 
     var navColor = bodyStyles.getPropertyValue('--navColor');
     var hoverNavColor = bodyStyles.getPropertyValue('--hoverNavColor');
+    
+    var plum = bodyStyles.getPropertyValue('--plum');
 
-    var pink = bodyStyles.getPropertyValue('--pink');
-    var mauve = bodyStyles.getPropertyValue('--mauve');
-    var red = bodyStyles.getPropertyValue('--red');
+    var ribbon = bodyStyles.getPropertyValue('--ribbon');
+    var rose = bodyStyles.getPropertyValue('--rose');
+    var wine = bodyStyles.getPropertyValue('--wine');
+
+    var coral = bodyStyles.getPropertyValue('--coral');
+    var salmon = bodyStyles.getPropertyValue('--salmon');
+    var tuna = bodyStyles.getPropertyValue('--tuna');
+
     var sky = bodyStyles.getPropertyValue('--sky');
-    var blue = bodyStyles.getPropertyValue('--blue');
-    var purple = bodyStyles.getPropertyValue('--purple');
-    var yellow = bodyStyles.getPropertyValue('--yellow');
-    var gold = bodyStyles.getPropertyValue('--gold');
-    var spring = bodyStyles.getPropertyValue('--spring');
-    var green = bodyStyles.getPropertyValue('--green');
-    var snot = bodyStyles.getPropertyValue('--snot');
-    var fave = bodyStyles.getPropertyValue('--fave');
+    var lake = bodyStyles.getPropertyValue('--lake');
+    var ocean = bodyStyles.getPropertyValue('--ocean');
+    var abyss = bodyStyles.getPropertyValue('--abyss');
+
+    var mint = bodyStyles.getPropertyValue('--mint');
+    var aloe = bodyStyles.getPropertyValue('--aloe');
+    var grass = bodyStyles.getPropertyValue('--grass');
+    var pine = bodyStyles.getPropertyValue('--pine');
+
+    var lemon = bodyStyles.getPropertyValue('--lemon');
+    var honey = bodyStyles.getPropertyValue('--honey');
+
+
 
 
     var cycleTimer; //variable for auto playing slideshow
@@ -66,11 +78,11 @@ $(document).ready(function(){
         var hoverNavButt = $(this).attr("id");
 
         if( hoverNavButt == "aboutNav" )
-            document.body.style.setProperty( '--hoverNavColor', purple);
+            document.body.style.setProperty( '--hoverNavColor', honey);
         else if ( hoverNavButt == "resumeNav" )
-            document.body.style.setProperty( '--hoverNavColor', gold);
+            document.body.style.setProperty( '--hoverNavColor', ocean);
         else
-            document.body.style.setProperty( '--hoverNavColor', red);
+            document.body.style.setProperty( '--hoverNavColor', salmon);
      });
 
     /* Function to:
@@ -96,26 +108,28 @@ $(document).ready(function(){
 
              //set correct color for active nav button, and theme colors
             if( clickNavButt == "aboutNav" ) {
-                document.body.style.setProperty( '--navColor', purple);
-                document.body.style.setProperty( '--bgColor', yellow);
-                document.body.style.setProperty( '--detailColor1', gold);
-                document.body.style.setProperty( '--detailColor2', red);
-                document.body.style.setProperty( '--emphasisColor', purple);
-
+                document.body.style.setProperty( '--navColor', honey);
+                document.body.style.setProperty( '--bg', lemon);
+                document.body.style.setProperty( '--side', salmon);
+                document.body.style.setProperty( '--hero', wine);
+                document.body.style.setProperty( '--foil', lake);
+                document.body.style.setProperty( '--villain', ocean);
             }
             else if ( clickNavButt == "resumeNav" ) {
-                document.body.style.setProperty( '--navColor', gold);
-                document.body.style.setProperty( '--bgColor', spring);
-                document.body.style.setProperty( '--detailColor1', green);
-                document.body.style.setProperty( '--detailColor2', snot);
-                document.body.style.setProperty( '--emphasisColor', gold);
+                document.body.style.setProperty( '--navColor', grass);
+                document.body.style.setProperty( '--bg', mint);
+                document.body.style.setProperty( '--side', aloe);
+                document.body.style.setProperty( '--hero', pine);
+                document.body.style.setProperty( '--foil', ribbon);
+                document.body.style.setProperty( '--villain', tuna);
             }
             else {
-                document.body.style.setProperty( '--navColor', red);
-                document.body.style.setProperty( '--bgColor', pink);
-                document.body.style.setProperty( '--detailColor1', mauve);
-                document.body.style.setProperty( '--detailColor2', red);
-                document.body.style.setProperty( '--emphasisColor', purple);
+                document.body.style.setProperty( '--navColor', salmon);
+                document.body.style.setProperty( '--bg', ribbon);
+                document.body.style.setProperty( '--side', rose);
+                document.body.style.setProperty( '--hero', salmon);
+                document.body.style.setProperty( '--foil', sky);
+                document.body.style.setProperty( '--villain', abyss);
             }
          }
 
@@ -372,11 +386,6 @@ $(document).ready(function(){
         $("html, body").animate({ scrollTop: 0 }, "slow");
     });
 
-
-    $("#slideshowImg").slick({
-
-    })
-
     $("#slideshowImg").on("swipe", function(event, slick, direction) {
         console.log(direction);
     });
@@ -416,12 +425,8 @@ $(document).ready(function(){
 
              //restyle popup
              $(this).find("#projDets").css({
-                 "border": "solid 5px var(--detailColor2)",
                  "margin-top": "0"
              });
-             $(this).find("#projDetTop").css("border-bottom", "solid 5px var(--detailColor2)");
-             $(this).find("#projDate").css("border-left", "solid 5px var(--detailColor2)");
-             $(this).find("#projTitle").css("background-color", "var(--detailColor2)");
 
 
              $("#content").css({
@@ -464,13 +469,8 @@ $(document).ready(function(){
 
             //restyle popup
             $(this).find("#projDets").css({
-                "border": "solid 5px var(--detailColor2)",
                 "margin-top": "0"
             });
-            $(this).find("#projDetTop").css("border-bottom", "solid 5px var(--detailColor2)");
-            $(this).find("#projDate").css("border-left", "solid 5px var(--detailColor2)");
-            $(this).find("#projTitle").css("background-color", "var(--detailColor2)");
-
 
             $("#content").css({
                 "overflow": "hidden",
@@ -523,15 +523,6 @@ $(document).ready(function(){
 
         });
 
-
-        // $("html, body").animate({
-        //     scrollTop: ( $("#contactWrapper").position().top - 150)
-        // });
-
-        // $("#contactWrapper").css({
-        //     "opacity": "1",
-        //     // "display": "block"
-        // });
 
     });
 
