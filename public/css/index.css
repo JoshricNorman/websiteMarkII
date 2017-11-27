@@ -107,7 +107,150 @@
                 animation: bounce 1s;
                 -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
                 animation-fill-mode: forwards;
+            }
 
+    .carousel {
+        width: 100%;
+        height: 75vh;
+        margin-bottom: 20vh;
+    }
+
+        .carouselImg {
+            width: 60vw;
+            height: 75vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: var(--bg);
+            background-blend-mode: multiply;
+
+            display: flex !important;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        .caraImgBorder {
+            border: 5px solid var(--bg);
+            width: calc(100% - 50px);
+            height: calc(100% - 50px);
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        .carouselDesc {
+            width: 40vw;
+            height: 75vh;
+            background-color: var(--foil);
+            text-align: center;
+            display: flex !important;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+            .caraDescBorder {
+                /*border: 5px solid var(--bg);*/
+                width: calc(100% - 50px);
+                height: calc(100% - 50px);
+
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+            }
+
+                .vertLine {
+                    border-left: 5px solid var(--bg);
+                    height: 7vh;
+                    margin: 25px auto;
+                }
+
+                .caraTitle {
+                    color: var(--bg);
+                    max-width: 400px;
+                    padding: 0 30px;
+                }
+
+                .caraButt {
+                    border-color: var(--bg);
+                    background-color: transparent;
+                    box-shadow: 10px 10px 10px var(--villain);
+
+                    color: var(--bg);
+                    box-shadow: 0px 0px 0px var(--villain);
+                    transition: box-shadow 0.5s ease;
+                }
+                .caraButt:hover {
+                    border-color: var(--hero);
+                    background-color: transparent;
+                    box-shadow: 10px 10px 10px var(--villain);
+                    color: var(--hero);
+
+                    transition: all 0.5s ease;
+                    --bounceDist: -3px;
+                    animation: bounce 1s;
+                    animation-fill-mode: forwards;
+                }
+
+
+
+        .slick-initialized .slick-slide {
+            height: 75vh;
+        }
+
+        .slick-dots {
+            text-align: center;
+            margin-top: 5.5vh;
+        }
+
+        .slick-dots li {
+            display: inline;
+            margin: 0 1vw;
+        }
+
+        .slick-dots li button {
+            font-size: 0;
+            letter-spacing: 0px;
+            color: orange ;
+
+            width: 13px;
+            height: 13px;
+            background-color: var(--side);
+
+            border-radius: 50%;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border-color: transparent;
+
+            padding: 3px;
+            transition: background-color 0.5s ease;
+        }
+
+        .slick-dots li button:hover {
+            background-color: var(--hero) !important;
+            transition: background-color 0.5s ease;
+        }
+        .slick-dots li button:focus {
+            outline: none;
+        }
+            .slick-active > button {
+                background-color: var(--villain) !important;
+                transition: background-color 0.5s ease;
+                animation: bounce 1s;
+                -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+                animation-fill-mode: forwards;
             }
 
     #projectFlexBox {
@@ -183,12 +326,10 @@
                     text-align: center;
                     padding: 7%;
                     margin: 0;
-                    font-size: 18px;
                     border-bottom: solid 5px var(--hero);
                     overflow: hidden;
                     white-space: nowrap;
-                    font-weight: normal;
-
+                    text-transform: uppercase;
                 }
 
                 .projectExtra {

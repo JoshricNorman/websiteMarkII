@@ -22,12 +22,25 @@ function stickFooter() {
 // });
 
 $(document).ready(function(){
+    $.getScript("../slick-1.8.0/slick/slick.min.js", function(){
+        $('.carousel').slick({
+            autoplay: true,
+            autoplaySpeed: 3000,
+            variableWidth: true,
+            dots: true,
+            infinite: true,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            arrows: false,
+            pauseOnDotsHover: true
+        });
+    });
 
     var bodyStyles = window.getComputedStyle(document.body);
 
     var navColor = bodyStyles.getPropertyValue('--navColor');
     var hoverNavColor = bodyStyles.getPropertyValue('--hoverNavColor');
-    
+
     var plum = bodyStyles.getPropertyValue('--plum');
 
     var ribbon = bodyStyles.getPropertyValue('--ribbon');
@@ -130,6 +143,7 @@ $(document).ready(function(){
                 document.body.style.setProperty( '--hero', salmon);
                 document.body.style.setProperty( '--foil', sky);
                 document.body.style.setProperty( '--villain', abyss);
+                $('.carousel').slick('unslick');
             }
          }
 
@@ -166,6 +180,19 @@ $(document).ready(function(){
         $("#contentWrapper").load(url + " #fillContent").hide().fadeIn('slow', function () {
                   $('footer').show();
                   stickFooter();
+                  if( clickNavButt == "portNav") {
+                      $('.carousel').slick({
+                          autoplay: true,
+                          autoplaySpeed: 3000,
+                          variableWidth: true,
+                          dots: true,
+                          infinite: true,
+                          slidesToShow: 2,
+                          slidesToScroll: 2,
+                          arrows: false,
+                          pauseOnDotsHover: true
+                      });
+                  }
 
          });
         //stop slideshow timer if it is available
@@ -397,11 +424,49 @@ $(document).ready(function(){
      *  - display correct project page when clicking on viewMore
      *  similar to clicking on project Container
      */
-     $(document).on("click", "#slideshowButt", function( event ) {
-        //  var buttClick = $(this).onclick;
-        //  $(this).onclick = false;
+     // $(document).on("click", "#slideshowButt", function( event ) {
+     //
+     //    var projPage = $(this).attr('value');
+     //
+     //     console.log( projPage );
+     //     var url = window.location.host;
+     //     var rootURL = url.split("/")[0];
+     //     var newURL = "http://" + rootURL + projPage;
+     //     history.pushState(null, null, newURL);
+     //
+     //     $('#popUp').scrollTop(0); //reset scroll so we're always at the top of the project images
+     //
+     //     //load project info
+     //     $("#popUp").load(newURL + " #fillContent", function () {
+     //         //restyle project stuff
+     //         $(this).css("display", "block");
+     //         $(this).find("#exitProj").css("display", "block").addClass("portExitProj");
+     //         $(this).find("#projEnvelope").css({
+     //             "background-color": "rgba(255, 255, 255, 0.75)",
+     //         });
+     //         $(this).find("#projImgs").css("margin-top", "100px").scrollTop(0);
+     //         $(this).find("#imgModal").addClass("portImgModal"); //prevents creating another scrollbar
+     //
+     //         //restyle popup
+     //         $(this).find("#projDets").css({
+     //             "margin-top": "0"
+     //         });
+     //
+     //
+     //         $("#content").css({
+     //             "overflow": "hidden",
+     //             "overflow-y": "hidden"
+     //         });
+     //         $('html').css('overflow', 'hidden'); //prevent scrolling behind the modal some how
+     //
+     //         $("#backItUp").css("display", "none").css("display", "block");
+     //     }); //end load callback function
+     // });
+     //
 
-        //  var projPage = $(this).attr('value').split("'")[1];
+
+     $(document).on("click", ".caraButt", function( event ) {
+
         var projPage = $(this).attr('value');
 
          console.log( projPage );
@@ -438,7 +503,6 @@ $(document).ready(function(){
              $("#backItUp").css("display", "none").css("display", "block");
          }); //end load callback function
      });
-
 
 
     /* Function to:

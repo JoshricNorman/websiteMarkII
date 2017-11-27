@@ -10,3 +10,5 @@
 @import url("resume.css");
 @import url("projects.css");
 @import url("mediaQueries.css");
+
+@import url("../slick-1.8.0/slick/slick.css");

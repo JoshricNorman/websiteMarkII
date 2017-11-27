@@ -134,7 +134,7 @@
                 }
 
                     .abilityTitle {
-                        color: var(--hero);
+                        color: var(--villain);
                         margin: 0 0 3px 0;
                     }
 
@@ -212,8 +212,9 @@
     }
 
     #resumePDF:hover {
-        box-shadow: 10px 10px 10px var(--hero);
-        border-color: var(--hero);
+        box-shadow: 10px 10px 10px var(--side);
+        border-color: var(--villain);
+        color: var(--villain);
         transition: all 0.5s ease;
         --bounceDist: -3px;
         animation: bounce 1s;
