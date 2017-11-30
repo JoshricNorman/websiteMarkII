@@ -72,8 +72,7 @@
         #aboutMe {
             color: var(--villain);
 
-            /*background-color: orange;*/
-            padding: 7% 5% 0 5%;
+            padding: 7% 5% 7% 5%;
             max-width: 900px;
             font-size: 24px;
         }
@@ -93,16 +92,24 @@
 
     #contactButt:hover {
         box-shadow: 10px 10px 10px var(--side);
-        border-color: var(--hero);
+        border-color: var(--villain);
+        color: var(--villain);
         transition: all 0.5s ease;
         --bounceDist: -3px;
         animation: bounce 1s;
         animation-fill-mode: forwards;
     }
 
+    #intIntro {
+        color: var(--villain);
+        margin-top: 25vh;
+        margin: 25vh 5vw 3vh 5vw;
+        text-align: center;
+    }
+
     #interestFlex {
         /*background-color: green;*/
-        padding: 5% 0;
+        padding: 0 0 5% 0;
         width: 85%;
         display: flex;
         flex-direction: row;
@@ -139,19 +146,21 @@
 
     #contactWrapper {
         width: 75%;
-        max-width: 650px;
+        max-width: 675px;
         margin-bottom: 50px;
-        border: solid 5px var(--hero);
+        /*border: solid 5px var(--hero);*/
+        background-color: var(--foil);
         opacity: 0;
         transition: opacity 2s ease;
+        box-shadow: 20px 20px 25px var(--side);
         display: none;
     }
 
         #contactDesc {
             padding: 25px 45px;
             margin: 0;
-            color: var(--hero);
-            border-bottom: solid 5px var(--hero);
+            color: var(--bg);
+            /*border-bottom: solid 5px var(--hero);*/
         }
 
         #contactInfo {
@@ -166,8 +175,8 @@
             #contactImp {
                 height: 100%;
                 width: 50%;
-                border-right: solid 5px var(--hero);
-                border-bottom: solid 5px var(--hero);
+                /*border-right: solid 5px var(--hero);*/
+                /*border-bottom: solid 5px var(--hero);*/
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -177,8 +186,11 @@
 
                 padding: 40px 45px;
                 flex-grow: 2;
-                margin-right:-5px;
+                /*margin-right:-5px;*/
                 margin-bottom: -5px;
+
+                background-color: var(--bg);
+                border: 5px solid var(--foil);
             }
 
                 #mailSymbol {

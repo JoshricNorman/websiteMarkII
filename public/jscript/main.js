@@ -30,9 +30,8 @@ $(document).ready(function(){
             dots: true,
             infinite: true,
             slidesToShow: 2,
-            slidesToScroll: 2,
             arrows: false,
-            pauseOnDotsHover: true
+            pauseOnDotsHover: true,
         });
     });
 
@@ -188,9 +187,8 @@ $(document).ready(function(){
                           dots: true,
                           infinite: true,
                           slidesToShow: 2,
-                          slidesToScroll: 2,
                           arrows: false,
-                          pauseOnDotsHover: true
+                          pauseOnDotsHover: true,
                       });
                   }
 

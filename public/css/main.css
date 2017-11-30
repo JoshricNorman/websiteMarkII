@@ -105,6 +105,30 @@ html {
     }
 }
 
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+
+    ::-webkit-scrollbar-track {
+        background: var(--side);
+        opacity: 0.3;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--hero);
+        border-radius: 10px;
+        opacity: 0.3;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        opacity: 1;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
     body {
         margin: 0;
         padding: 0;
@@ -354,7 +378,13 @@ html {
 /*Basic text formatting sans color*/
 h1 {}
 
-h2 {}
+h2 {
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 3px;
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
 
 h3 {
     font-family: 'Nunito', sans-serif;

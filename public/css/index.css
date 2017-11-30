@@ -131,18 +131,18 @@
             align-content: center;
         }
 
-        .caraImgBorder {
-            border: 5px solid var(--bg);
-            width: calc(100% - 50px);
-            height: calc(100% - 50px);
+            .caraImgBorder {
+                border: 5px solid var(--bg);
+                width: calc(100% - 50px);
+                height: calc(100% - 50px);
 
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-        }
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+            }
 
         .carouselDesc {
             width: 40vw;
@@ -252,6 +252,21 @@
                 -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
                 animation-fill-mode: forwards;
             }
+
+    #projWelcome {
+        color: var(--hero);
+        /*margin: 0 auto 3vh auto;*/
+        text-align: center;
+
+        display: none;
+    }
+
+        #projWelcome .vertLine {
+            border-color: var(--hero);
+            width: 0;
+            height: 15vh;
+            margin: 10vh auto;
+        }
 
     #projectFlexBox {
         display: flex;

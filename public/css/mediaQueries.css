@@ -27,6 +27,14 @@
         #slideshowButt {
             bottom: 150px;
         }
+
+        .carousel.slick-initialized.slick-slider.slick-dotted  {
+            display: block;
+        }
+
+        #projWelcome {
+            display: none;
+        }
         /*------------------------ ABOUT.CSS ------------------------*/
 
         /*------------------------ RESUME.CSS ------------------------*/
@@ -110,6 +118,13 @@
                 margin: 0 15px;
             }
 
+            .carousel.slick-initialized.slick-slider.slick-dotted  {
+                display: block;
+            }
+
+            #projWelcome {
+                display: none;
+            }
         /*------------------------ ABOUT.CSS ------------------------*/
 
         /*------------------------ RESUME.CSS ------------------------*/
@@ -206,6 +221,14 @@
 
                 #slideshowImg {
                 }
+
+            .carousel.slick-initialized.slick-slider.slick-dotted  {
+                display: none;
+            }
+
+            #projWelcome {
+                display: block;
+            }
 
     /*------------------------ ABOUT.CSS ------------------------*/
 
@@ -422,6 +445,14 @@
                 #slideshowImg {
                 }
 
+
+                .carousel.slick-initialized.slick-slider.slick-dotted  {
+                    display: none;
+                }
+
+                #projWelcome {
+                    display: block;
+                }
     /*------------------------ ABOUT.CSS ------------------------*/
             #introduction{}
 
