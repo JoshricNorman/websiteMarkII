@@ -14,12 +14,103 @@ function stickFooter() {
 }
 
 
-/* Function to:
- * - stick the footer to the bottom of the page when page is loaded
- */
-// $(window).on('load', function(){
-//     stickFooter();
-// });
+ /* Function to:
+  * - force a redraw of an element by hiding then showing it right away
+  */
+$.fn.forceRedraw = function() {
+    return this.hide(0, function() {
+        $(this).show();
+     });
+ }
+
+
+function startAnimations() {
+    //animate anime obj when on screen, else, reset animation
+    $.each( $(".anime"), function () {
+        var top_of_element = $(this).offset().top;
+        var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+        var bottom_of_screen = $(window).scrollTop() + $(window).height();
+        var top_of_screen = $(window).scrollTop();
+
+        //check if in screen first
+        if( (bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element) ) {
+            if( $(this).hasClass("anUnderline") ) {
+                $(this).css({
+                    "animation": "underline 1.5s",
+                    "-webkit-animation-play-state": "running",
+                    "animation-play-state": "running"
+                });
+            }
+            if (  $(this).hasClass("anWaveText") ) {
+                var str = $(this).text();
+                var strLength = str.length;
+                var letters = str.split('');
+                var $anWaveText = $(this);
+                $(this).empty(); //empty the text we are making wave
+
+                //reinsert each char into the original string but w/ enclosing span tags
+                $.each( letters, function(_, letter) {
+                     $('<span>', {text: letter}).appendTo($anWaveText);
+                });
+
+                //for each spanned char, animate it with a delay
+                for( i = 0; i <= strLength; i++) {
+                    $(':nth-child(' + i +')', this).css({
+                        "animation": "bounce 0.5s ease-in-out infinite",
+                        "-webkit-animation-play-state": "running",
+                        "animation-play-state": "running",
+                        "animation-direction": "alternate",
+                        "animation-fill-mode": "forwards",
+                        "display": "inline-block",
+                        "-webkit-animation-delay": String(i/30) + "s",
+                        "animation-delay": String(i/30) + "s",
+                        "white-space": "pre-wrap",
+                    });
+                }
+            } //end anWaveText
+
+            if ( $(this).hasClass("anFadeIn") ) {
+                $(this).css("display", "none").fadeIn("slow", "swing");
+            }
+
+            if (  $(this).hasClass("anBounceText") ) {
+                var str = $(this).text();
+                var strLength = str.length;
+                var letters = str.split('');
+                var $anBounceText = $(this);
+                $(this).empty(); //empty the text we are making wave
+
+                //reinsert each char into the original string but w/ enclosing span tags
+                $.each( letters, function(_, letter) {
+                     $('<span>', {text: letter}).appendTo($anBounceText);
+                });
+
+                //for each spanned char, animate it with a delay
+                for( i = 0; i <= strLength; i++) {
+                    $(':nth-child(' + i +')', this).css({
+                        "animation": "bounce 0.5s ease-in-out",
+                        "-webkit-animation-play-state": "running",
+                        "animation-play-state": "running",
+                        "animation-direction": "alternate",
+                        "animation-fill-mode": "forwards",
+                        "display": "inline-block",
+                        "-webkit-animation-delay": String(i/20) + "s",
+                        "animation-delay": String(i/20) + "s",
+                        "white-space": "pre-wrap",
+                        "-webkit-animation-iteration-count": "4",
+                        "animation-iteration-count": "4"
+                    });
+                }
+            } //end anBounceText
+
+            if (  $(this).hasClass("anStartAnime") ) {
+                $(this).css("animation-play-state", "running");
+            }
+            //once animated, remove the need to check for it
+            $(this).removeClass("anime");
+        }
+    }); //end animations
+} //end function startAnimations
 
 $(document).ready(function(){
     $.getScript("../slick-1.8.0/slick/slick.min.js", function(){
@@ -63,14 +154,8 @@ $(document).ready(function(){
     var lemon = bodyStyles.getPropertyValue('--lemon');
     var honey = bodyStyles.getPropertyValue('--honey');
 
-
-
-
-    var cycleTimer; //variable for auto playing slideshow
-    var slideshowIndex = 0;
-    var slideshowDir = 1;
-
     stickFooter();
+    startAnimations();
 
 //-----------------NAVIGATION-----------------\\
 
@@ -169,14 +254,14 @@ $(document).ready(function(){
         //set the correct URL and push it to history so we can navigate back and forth
         history.pushState(null, null, url);
 
-
         //empty the content wrapper
         $("#contentWrapper").empty();
         //replace it with new content **NOTE: maintain space b/w url and #mainContent
         //in order to prevent loading the entire page
 
         $('footer').hide(1);
-        $("#contentWrapper").load(url + " #fillContent").hide().fadeIn('slow', function () {
+        $("#contentWrapper").load(url + " #fillContent").hide().fadeIn('fast', function () {
+                  startAnimations();
                   $('footer').show();
                   stickFooter();
                   if( clickNavButt == "portNav") {
@@ -193,26 +278,12 @@ $(document).ready(function(){
                   }
 
          });
-        //stop slideshow timer if it is available
-        clearTimeout(cycleTimer);
-        if( pageName == "portfolio") {
-            slideshowIndex = 0;
-            cycleTimer = setTimeout(function() {cycleSlides();}, 2000);
-        }
 
         //force scroll to top of the page
         $("html, body").animate({ scrollTop: 0 }, "fast");
+
      });
 
-
-     /* Function to:
-      * - force a redraw of an element by hiding then showing it right away
-      */
-     $.fn.forceRedraw = function() {
-         return this.hide(0, function() {
-            $(this).show();
-         });
-     }
 
      /* Function to:
       * - Reveal backItUp when page scrolls passed window height
@@ -236,89 +307,7 @@ $(document).ready(function(){
             });
         }
 
-        //animate anime obj when on screen, else, reset animation
-        $.each( $(".anime"), function () {
-            var top_of_element = $(this).offset().top;
-            var bottom_of_element = $(this).offset().top + $(this).outerHeight();
-            var bottom_of_screen = $(window).scrollTop() + $(window).height();
-            var top_of_screen = $(window).scrollTop();
-
-            //check if in screen first
-            if( (bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element) ) {
-                if( $(this).hasClass("anUnderline") ) {
-                    $(this).css({
-                        "animation": "underline 1.5s",
-                        "-webkit-animation-play-state": "running",
-                        "animation-play-state": "running"
-                    });
-                }
-                if (  $(this).hasClass("anWaveText") ) {
-                    var str = $(this).text();
-                    var strLength = str.length;
-                    var letters = str.split('');
-                    var $anWaveText = $(this);
-                    $(this).empty(); //empty the text we are making wave
-
-                    //reinsert each char into the original string but w/ enclosing span tags
-                    $.each( letters, function(_, letter) {
-                         $('<span>', {text: letter}).appendTo($anWaveText);
-                    });
-
-                    //for each spanned char, animate it with a delay
-                    for( i = 0; i <= strLength; i++) {
-                        $(':nth-child(' + i +')', this).css({
-                            "animation": "bounce 0.5s ease-in-out infinite",
-                            "-webkit-animation-play-state": "running",
-                            "animation-play-state": "running",
-                            "animation-direction": "alternate",
-                            "animation-fill-mode": "forwards",
-                            "display": "inline-block",
-                            "-webkit-animation-delay": String(i/30) + "s",
-                            "animation-delay": String(i/30) + "s",
-                            "white-space": "pre-wrap",
-                        });
-                    }
-                } //end anWaveText
-
-                if ( $(this).hasClass("anFadeIn") ) {
-                    $(this).css("display", "none").fadeIn("slow", "swing");
-                }
-
-                if (  $(this).hasClass("anBounceText") ) {
-                    var str = $(this).text();
-                    var strLength = str.length;
-                    var letters = str.split('');
-                    var $anBounceText = $(this);
-                    $(this).empty(); //empty the text we are making wave
-
-                    //reinsert each char into the original string but w/ enclosing span tags
-                    $.each( letters, function(_, letter) {
-                         $('<span>', {text: letter}).appendTo($anBounceText);
-                    });
-
-                    //for each spanned char, animate it with a delay
-                    for( i = 0; i <= strLength; i++) {
-                        $(':nth-child(' + i +')', this).css({
-                            "animation": "bounce 0.5s ease-in-out",
-                            "-webkit-animation-play-state": "running",
-                            "animation-play-state": "running",
-                            "animation-direction": "alternate",
-                            "animation-fill-mode": "forwards",
-                            "display": "inline-block",
-                            "-webkit-animation-delay": String(i/20) + "s",
-                            "animation-delay": String(i/20) + "s",
-                            "white-space": "pre-wrap",
-                            "-webkit-animation-iteration-count": "4",
-                            "animation-iteration-count": "4"
-                        });
-                    }
-                } //end anBounceText
-                //once animated, remove the need to check for it
-                $(this).removeClass("anime");
-            }
-
-        });
-
+        startAnimations();
     });
 
     /* Function to:
@@ -334,135 +323,17 @@ $(document).ready(function(){
 
 //-----------------PORTFLIO FUNCTIONS-----------------\\
 
-
     /* Function to:
-     * - Display correct slideshow image
-     * - Display correct slideshow title
-     * - Change to correct slideshow link
+     * - auto scroll window to the top when a carousel dot is clicked
      */
-    function displaySlideshow( num ) {
-        if( num === undefined ) num = 0;
-
-        //process the correct image, set the correct title, set the correct link
-        switch( num ) {
-        case 0:
-            $("#slideshowImg").css("background-image", "url(../img/joshric_background1_17Aug20.jpg)");
-            $("#slideshowTitle").text( "Triton Tracker");
-            $("#slideshowButt").val("/tritonTracker")
-            break;
-        case 1:
-            $("#slideshowImg").css("background-image", "url(../img/joshric_background1.jpg)");
-            $("#slideshowTitle").text( "Sun God 2017");
-            $("#slideshowButt").val("/sunGodFestival2017")
-            break;
-        case 2:
-            $("#slideshowImg").css("background-image", "url(../img/joshric_background2.jpg)");
-            $("#slideshowTitle").text( "Red Cross More Campaign");
-            $("#slideshowButt").val("/redCross")
-            break;
-        case 3:
-            $("#slideshowImg").css("background-image", "url(../img/joshric_background3.jpg)");
-            $("#slideshowTitle").text( "Lucerene");
-            $("#slideshowButt").val("/lucerneRepackaging")
-            break;
-        }
-
-    }
-
-    /* Function to:
-     * -auto play the slideshow after 5 seconds;
-     */
-    function cycleSlides() {
-        //increment our place in the slideshow, loopback if neccessary
-        // slideshowIndex++;
-        slideshowIndex += (slideshowDir);
-        if( slideshowIndex > 3) slideshowIndex = 0;
-        // console.log( "curr slide: " + slideshowIndex);
-
-        //display correct selected dot
-        $(".dot").removeClass("activeDot");
-        var currDot = "#dot" + parseInt(slideshowIndex);
-        $(currDot).addClass("activeDot");
-
-        displaySlideshow( slideshowIndex ); //display correct image
-        cycleTimer = setTimeout(function() {cycleSlides();}, 5000); //call function again in 4 seconds
-    }
-
-    //set auto cycle slides after 2 seconds
-    cycleTimer = setTimeout(function() {cycleSlides();}, 2000);
-
-    /* Function to:
-     * - process clicking on slideshow dots
-     * - display correct image depending on slide index
-     */
-    $(document).on("click", ".dot", function(){
-        $(this).siblings(".activeDot").removeClass("activeDot");
-        $(this).addClass("activeDot");
-
-        //change which slide we are on
-        var dotNum = ( $(this).attr("id") ).split("dot")[1];
-        slideshowIndex = parseInt(dotNum);
-        displaySlideshow( slideshowIndex );
-        console.log("clicked on dot: " + dotNum);
-
-        //reset cycle slideshow
-        clearTimeout(cycleTimer);
-        cycleTimer = setTimeout(function() {cycleSlides();}, 7000);
+    $(document).on("click", ".slick-dots li button", function( event ) {
         $("html, body").animate({ scrollTop: 0 }, "slow");
     });
 
-    $("#slideshowImg").on("swipe", function(event, slick, direction) {
-        console.log(direction);
-    });
 
-
-
-
-    /* TODO Function to:
-     *  - display correct project page when clicking on viewMore
-     *  similar to clicking on project Container
+    /* Function to:
+     * - show the correct project information when the view more button is clicked
      */
-     // $(document).on("click", "#slideshowButt", function( event ) {
-     //
-     //    var projPage = $(this).attr('value');
-     //
-     //     console.log( projPage );
-     //     var url = window.location.host;
-     //     var rootURL = url.split("/")[0];
-     //     var newURL = "http://" + rootURL + projPage;
-     //     history.pushState(null, null, newURL);
-     //
-     //     $('#popUp').scrollTop(0); //reset scroll so we're always at the top of the project images
-     //
-     //     //load project info
-     //     $("#popUp").load(newURL + " #fillContent", function () {
-     //         //restyle project stuff
-     //         $(this).css("display", "block");
-     //         $(this).find("#exitProj").css("display", "block").addClass("portExitProj");
-     //         $(this).find("#projEnvelope").css({
-     //             "background-color": "rgba(255, 255, 255, 0.75)",
-     //         });
-     //         $(this).find("#projImgs").css("margin-top", "100px").scrollTop(0);
-     //         $(this).find("#imgModal").addClass("portImgModal"); //prevents creating another scrollbar
-     //
-     //         //restyle popup
-     //         $(this).find("#projDets").css({
-     //             "margin-top": "0"
-     //         });
-     //
-     //
-     //         $("#content").css({
-     //             "overflow": "hidden",
-     //             "overflow-y": "hidden"
-     //         });
-     //         $('html').css('overflow', 'hidden'); //prevent scrolling behind the modal some how
-     //
-     //         $("#backItUp").css("display", "none").css("display", "block");
-     //     }); //end load callback function
-     // });
-     //
-
-
      $(document).on("click", ".caraButt", function( event ) {
 
         var projPage = $(this).attr('value');
@@ -543,8 +414,6 @@ $(document).ready(function(){
             $("#backItUp").css("display", "none").css("display", "block");
         }); //end load callback function
     });
-
-
 
     /* Function to:
      * prevent the exit button from reloading the portfolio page

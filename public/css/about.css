@@ -105,6 +105,7 @@
         margin-top: 25vh;
         margin: 25vh 5vw 3vh 5vw;
         text-align: center;
+        text-transform: initial;
     }
 
     #interestFlex {

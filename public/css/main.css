@@ -116,7 +116,7 @@ html {
     }
 
     ::-webkit-scrollbar-thumb {
-        background: var(--hero);
+        background: var(--villain);
         border-radius: 10px;
         opacity: 0.3;
     }
@@ -127,6 +127,7 @@ html {
 
     *:focus {
         outline: none;
+
     }
 
     body {

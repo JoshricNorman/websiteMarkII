@@ -5,12 +5,94 @@
     --bg: var(--mint);
     --side: var(--aloe);
     --hero: var(--pine);
-    --foil: var(--ribbon);
+    --foil: var(--rose);
     --villain: var(--tuna);
 
     --navColor: var(--grass);
     --hoverNavColor: var(--navColor);
 }
+
+
+    #whatCanIDo {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+
+        /*border: solid 5px var(--foil);*/
+        background-color: var(--hero);
+
+        width: 100%;
+        height: 75vh;
+        min-height: 580px;
+
+        /*max-width: 1100px;*/
+    }
+
+        #whatCanIDo h2 {
+            /*color: var(--emphasisColor);*/
+            /*border-bottom: solid 5px var(--detailColor2);*/
+            width: 90%;
+            padding: 25px 0;
+            margin: 3vh auto 0 auto;
+            /*background-color: var(--foil);*/
+            color: var(--bg);
+
+            text-align: center;
+        }
+
+        #abilityFlex {
+            /*border-top: solid 5px var(--foil);*/
+            width: 100%;
+            padding: 50px 0;
+
+            display: flex;
+            flex-direction:row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            align-content: flex-start;
+        }
+
+            .ability {
+                width: 25%;
+                min-width: 230px;
+                margin: 25px 15px 45px 35px;
+
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+                align-content: flex-start;
+
+            }
+
+                .abilityImg {
+                    width: 75px;
+                    height: auto;
+                    /*background-color: gray;*/
+
+                }
+
+                .abilityInfo {
+                    margin-left: 20px;
+                }
+
+                    .abilityTitle {
+                        color: var(--villain);
+                        margin: 0 0 3px 0;
+                    }
+
+                    .abilityDesc {
+                        color: var(--foil);
+                        margin-top: 0;
+                        max-width: 330px;
+                        font-size: 12px;
+                        line-height: 24px;
+                    }
 
     #resumeHeadImg {
         width: 100%;
@@ -20,27 +102,39 @@
         background-size: 300px 300px;
         background-position: 0px bottom;
         animation: animateBG 10s linear infinite;
+
+        -webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
+        animation-play-state: paused;
     }
 
-    #eduWork {
+    #eduAchiWork {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
         align-items: flex-start;
         align-content: center;
 
-        width: 100%;
-        max-width: 1100px;
-        /*height: 400px;*/
+        width: 86vw;
+        margin: 5vh 12vw 0 12vw;
     }
 
-        #education, #workXP {
-            width: 40%;
+        #eduAchi {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            align-content: flex-start;
+
+            /*width: 50%;*/
+            max-width: 500px;
+        }
+
+        #education, #workXP, #achievements {
             min-width: 300px;
             max-width: 500px;
-            margin: 1%;
-            padding: 2%;
+            margin: 2vh 2vw;
             height: auto;
         }
 
@@ -66,110 +160,26 @@
                 }
 
                     .resumeDesc b {
-                        color: var(--foil);
-                    }
-
-    #whatCanIDo {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: space-around;
-        align-items: center;
-        align-content: center;
-
-        border: solid 5px var(--foil);
-
-        width: 95%;
-        max-width: 1100px;
-
-    }
-
-        #whatCanIDo h3 {
-            /*color: var(--emphasisColor);*/
-            /*border-bottom: solid 5px var(--detailColor2);*/
-            width: 85%;
-            padding: 25px 0  25px 15%;
-            margin: 0;
-            background-color: var(--foil);
-            color: var(--bg);
-
-            /*text-align: right;*/
-        }
-
-        #abilityFlex {
-            border-top: solid 5px var(--foil);
-            width: 100%;
-            padding: 50px 0;
-
-            display: flex;
-            flex-direction:row;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start;
-            align-content: flex-start;
-        }
-
-            .ability {
-                width: 25%;
-                min-width: 230px;
-                margin: 25px 15px 45px 35px;
-
-                display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                justify-content: flex-start;
-                align-items: flex-start;
-                align-content: flex-start;
-            }
-
-                .abilityImg {
-                    width: 75px;
-                    height: auto;
-                    /*background-color: gray;*/
-
-                }
-
-                .abilityInfo {
-                    margin-left: 20px;
-                }
-
-                    .abilityTitle {
                         color: var(--villain);
-                        margin: 0 0 3px 0;
                     }
 
-                    .abilityDesc {
-                        color: var(--side);
-                        margin-top: 0;
-                        max-width: 330px;
-                        font-size: 12px;
-                        line-height: 24px;
-                    }
-    #expAchi {
-        width: 95%;
-        padding: 40px 10px 0 10px;
 
-        /*background-color: orange;*/
-
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-        align-content: center;
-    }
 
         #expertise {
-            width: 55%;
             max-width: 850px;
-            margin-bottom: 75px;
+            width: 86vw;
+            margin: 5vh 12vw 0 12vw;
         }
+
+            #expertise h4 {
+                text-align: center;
+            }
 
             #expBarWrap {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
-                justify-content: flex-start;
+                justify-content: center;
                 align-content: space-around;
                 align-items: center;
 
@@ -182,13 +192,13 @@
                 }
 
                     .expTitle {
-                        color: var(--side)
+                        color: var(--hero)
                     }
 
                     .expBarBG {
                         height: 6px;
                         width: 150px;
-                        background-color: var(--side);
+                        background-color: var(--foil);
                     }
 
                         .expBar {
@@ -197,18 +207,13 @@
                             transform-origin: left;
                         }
 
-
-
-            #achievements {
-            }
-
     #resumePDF {
         background-color: var(--bg);
         /*border: 3px solid var(--detailColor2);*/
         border-color: var(--side);
         box-shadow: 0px 0px 0px var(--side);
         transition: box-shadow 0.5s ease;
-        margin: 75px auto 25px auto;
+        margin: 15vh auto 25px auto;
     }
 
     #resumePDF:hover {

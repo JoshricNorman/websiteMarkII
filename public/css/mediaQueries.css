@@ -5,19 +5,11 @@
     @media screen and (min-width: 768.1px) and (max-width: 1024px ) {
         /*------------------------ MAIN.CSS ------------------------*/
 
-        button {
+        /*button {
             font-size: 20px;
             border-width: 5px;
-        }
-        h3 { font-size: 36px;}
+        }*/
 
-        h4 { font-size: 28px;}
-
-        h5 { font-size: 22px;}
-
-        h6 { font-size: 18px;}
-
-        p { font-size: 16px;}
         /*------------------------ INDEX.CSS ------------------------*/
 
         #slideshowTitle {
@@ -38,17 +30,10 @@
         /*------------------------ ABOUT.CSS ------------------------*/
 
         /*------------------------ RESUME.CSS ------------------------*/
-
-        /*.resumeBullet {
-            margin-top: 32px;
-        }*/
-
-        #expAchi {
-        justify-content: flex-start;
-        width: 90%;
-        padding: 40px 5% 15px 5%;
+        #eduAchiWork {
+            width: 90vw;
+            margin: 5vh 5vw 0 5vw;
         }
-
         #expertise {
             width: 100%;
         }
@@ -72,17 +57,6 @@
 
         /*------------------------ MAIN.CSS ------------------------*/
 
-        header a {
-            /*font-size: 24px;*/
-        }
-
-        /*nav ul {
-            padding: 30px  15vw 30px 0;
-        }
-
-        #fillContent {
-            padding-top: 103px;
-        }*/
 
         button {
             font-size: 20px;
@@ -100,38 +74,20 @@
         p { font-size: 16px;}
         /*------------------------ INDEX.CSS ------------------------*/
 
-        #slideshowTitle {
-            bottom: 200px;
+
+        .carousel.slick-initialized.slick-slider.slick-dotted  {
+            display: block;
         }
 
-        #slideshowButt {
-            bottom: 150px;
+        #projWelcome {
+            display: none;
         }
-
-        #slideshowDots {
-            bottom: 65px;
-        }
-
-            .dot{
-                width: 17px;
-                height: 17px;
-                margin: 0 15px;
-            }
-
-            .carousel.slick-initialized.slick-slider.slick-dotted  {
-                display: block;
-            }
-
-            #projWelcome {
-                display: none;
-            }
         /*------------------------ ABOUT.CSS ------------------------*/
 
         /*------------------------ RESUME.CSS ------------------------*/
 
         #whatCanIDo {
-            width: 85vw;
-            margin-top: 5vh;
+            height: auto;
         }
 
         #expertise {
@@ -214,21 +170,13 @@
         }
 
     /*------------------------ INDEX.CSS ------------------------*/
-            #slideshow {
-                height: 75vh;
-                /*margin-bottom: 4px;*/
-            }
+        .carousel.slick-initialized.slick-slider.slick-dotted  {
+            display: none;
+        }
 
-                #slideshowImg {
-                }
-
-            .carousel.slick-initialized.slick-slider.slick-dotted  {
-                display: none;
-            }
-
-            #projWelcome {
-                display: block;
-            }
+        #projWelcome {
+            display: block;
+        }
 
     /*------------------------ ABOUT.CSS ------------------------*/
 
@@ -244,6 +192,7 @@
             content: "Hello! The screen you're viewing this on is small, so here's an abridged version: My name is Joshric and I'm a Filipino-American graphic designer. A graduate from UC San Diego, I've had the pleasure of working at a design studio for more than a few years! Get a hold of me if you ever need some work done :)";
             visibility: visible;
             line-height: 32px;
+            color: var(--hero);
         }
 
 
@@ -264,27 +213,12 @@
 
     /*------------------------ RESUME.CSS ------------------------*/
 
-            #resumeHeadImg {
-                order: -2;
-            }
-                #education {
-                    margin-top: 15px;
-                }
-
-                .resumeInfo h4 {
-                    text-align: center;
-                }
-
-                .resumeInfo h6 {
-                    font-size: 12px;
-                    font-weight: 800;
-                }
 
             #whatCanIDo {
-                width: 85vw;
+                height: auto;
             }
 
-                #whatCanIDo h3 {
+                #whatCanIDo h2 {
                     text-align: center;
                     font-size: 24px;
                     letter-spacing: normal;
@@ -292,9 +226,52 @@
                     width: 100%;
                 }
 
-            #expAchi {
-                padding: 40px 0;
+                .ability {
+                    margin: 3vh 0;
+                    width: 40vw;
+                    min-width: 0;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                }
+
+                    .abilityImg {
+                        /*margin: auto;*/
+                    }
+
+                    .abilityInfo {
+                        margin: 2vh 0 0 0;
+                    }
+
+                        .abilityTitle {
+                            text-align: center;
+                            margin: auto;
+                            width: inherit;
+
+                        }
+
+                        .abilityDesc {
+                            display: none;
+                        }
+            #resumeHeadImg {
+                /*order: -2;*/
             }
+                #education {
+                    margin-top: 15px;
+                }
+
+                .resumeInfo h4 {
+                    /*text-align: center;*/
+                }
+
+                .resumeInfo h6 {
+                    font-size: 12px;
+                    font-weight: 800;
+                }
+
+
 
                 #expertise {
                     width: 100vw;
@@ -329,8 +306,7 @@
                 }
 
             #resumePDFA {
-                order: -1;
-                margin-top: 10px;
+
             }
     /*------------------------ PROJECT.CSS ------------------------*/
 
@@ -437,22 +413,14 @@
         }
 
     /*------------------------ INDEX.CSS ------------------------*/
-            #slideshow {
-                height: 75vh;
-                /*margin-bottom: 4px;*/
+
+            .carousel.slick-initialized.slick-slider.slick-dotted  {
+                display: none;
             }
 
-                #slideshowImg {
-                }
-
-
-                .carousel.slick-initialized.slick-slider.slick-dotted  {
-                    display: none;
-                }
-
-                #projWelcome {
-                    display: block;
-                }
+            #projWelcome {
+                display: block;
+            }
     /*------------------------ ABOUT.CSS ------------------------*/
             #introduction{}
 
@@ -472,7 +440,7 @@
                     content: "Hello! The screen you're viewing this on is small, so I'll make this brief: My name is Joshric and I'm a Filipino-American graphic designer. A graduate from UC San Diego, I've had the pleasure of working at a design studio for more than a few years! Get a hold of me if you ever need some work done :)";
                     visibility: visible;
                     line-height: 32px;
-
+                    color: var(--hero);
                 }
 
                 #interestFlex {
@@ -513,9 +481,47 @@
                     }
     /*------------------------ RESUME.CSS ------------------------*/
 
-            #resumeHeadImg {
-                order: -2;
-            }
+                    #whatCanIDo {
+                        height: auto;
+                    }
+
+                        #whatCanIDo h2 {
+                            text-align: center;
+                            font-size: 20px;
+                            letter-spacing: normal;
+                            padding: 15px 0 15px 0;
+                            width: 100%;
+                        }
+
+                        #abilityFlex {}
+
+                            .ability {
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 3vh 0;
+                                width: 40%;
+                                min-width: 0;
+                            }
+
+                                .abilityImg {
+                                    margin-bottom: 3vh;
+                                }
+
+                                .abilityInfo {
+                                    margin: 0;
+                                }
+
+                                    .abilityTitle {
+                                        text-align: center;
+                                        font-size: 12px;
+                                    }
+
+                                    .abilityDesc {
+                                        text-align: center;
+                                        display: none;
+                                    }
+
                 #education {
                     margin-top: 15px;
                 }
@@ -537,7 +543,7 @@
                         }
 
                     .resumeInfo h4 {
-                        text-align: center;
+                        margin-left: 5vw;
                     }
 
                     .resumeInfo h6 {
@@ -552,53 +558,6 @@
                             margin: auto;
                             width: 80%;
                         }
-
-                #whatCanIDo {
-                    width: 85vw;
-                }
-
-                    #whatCanIDo h3 {
-                        text-align: center;
-                        font-size: 20px;
-                        letter-spacing: normal;
-                        padding: 15px 0 15px 0;
-                        width: 100%;
-                    }
-
-                    #abilityFlex {}
-
-                        .ability {
-                            flex-direction: column;
-                            align-items: center;
-                            justify-content: center;
-                            margin: 3vh 0;
-                            width: 40%;
-                            min-width: 0;
-                        }
-
-                            .abilityImg {
-                                margin-bottom: 3vh;
-                            }
-
-                            .abilityInfo {
-                                margin: 0;
-                            }
-
-                                .abilityTitle {
-                                    text-align: center;
-                                    font-size: 12px;
-                                }
-
-                                .abilityDesc {
-                                    text-align: center;
-                                    display: none;
-                                }
-
-
-
-                #expAchi {
-                    padding: 40px 0;
-                }
 
                     #expertise {
                         width: 100vw;
@@ -628,10 +587,6 @@
                     margin-left: 0;
                 }
 
-            #resumePDFA {
-                order: -1;
-                margin-top: 10px;
-            }
     /*------------------------ PROJECT.CSS ------------------------*/
 
             #projEnvelope {
