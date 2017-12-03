@@ -120,7 +120,8 @@ $(document).ready(function(){
             variableWidth: true,
             dots: true,
             infinite: true,
-            slidesToShow: 2,
+            slidesToShow: 1,
+            slidesToScroll: 1,
             arrows: false,
             pauseOnDotsHover: true,
         });
@@ -271,7 +272,8 @@ $(document).ready(function(){
                           variableWidth: true,
                           dots: true,
                           infinite: true,
-                          slidesToShow: 2,
+                          slidesToShow: 1,
+                          slidesToScroll: 1,
                           arrows: false,
                           pauseOnDotsHover: true,
                       });

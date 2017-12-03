@@ -22,8 +22,8 @@
         margin-bottom: 20vh;
     }
 
-        .carouselImg {
-            width: 60vw;
+        .carouselSlide {
+            width: 100vw;
             height: 75vh;
             background-size: cover;
             background-repeat: no-repeat;
@@ -31,25 +31,38 @@
             background-blend-mode: multiply;
 
             display: flex !important;
-            flex-direction: column;
+            flex-direction: row;
             flex-wrap: nowrap;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             align-content: center;
         }
 
-            .caraImgBorder {
-                border: 5px solid var(--bg);
-                width: calc(100% - 50px);
-                height: calc(100% - 50px);
-
-                display: flex;
-                flex-direction: column;
-                flex-wrap: nowrap;
-                justify-content: center;
-                align-items: center;
-                align-content: center;
+            .carouselImg{
+                width: 60vw;
+                height: 75vh;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-color: var(--bg);
+                background-blend-mode: multiply;
             }
+
+                .caraImgBorder {
+                    box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+                    border: 5px solid var(--bg);
+                    width: calc(100% - 40px);
+                    margin: 20px;
+                    height: calc(100% - 40px);
+
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    align-content: center;
+                }
 
         .carouselDesc {
             width: 40vw;
@@ -62,6 +75,7 @@
             justify-content: center;
             align-items: center;
             align-content: center;
+            opacity: .5;
         }
 
             .caraDescBorder {
@@ -119,11 +133,12 @@
         .slick-dots {
             text-align: center;
             margin-top: 5.5vh;
+            padding: 0;
         }
 
         .slick-dots li {
             display: inline;
-            margin: 0 1vw;
+            margin: 0 2vw;
         }
 
         .slick-dots li button {
@@ -159,21 +174,6 @@
                 -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
                 animation-fill-mode: forwards;
             }
-
-    #projWelcome {
-        color: var(--hero);
-        /*margin: 0 auto 3vh auto;*/
-        text-align: center;
-
-        display: none;
-    }
-
-        #projWelcome .vertLine {
-            border-color: var(--hero);
-            width: 0;
-            height: 15vh;
-            margin: 10vh auto;
-        }
 
     #projectFlexBox {
         display: flex;

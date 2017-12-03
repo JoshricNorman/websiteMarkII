@@ -107,9 +107,10 @@
 
             #exitProj {
                 /*color: var(--detailColor1);*/
-                color: white;
-                text-shadow: 0px 0px 7px rgba(0, 0, 0, 1);
-                opacity: .8;
+                color: var(--hero);
+                text-shadow: 1px 1px 2px var(--villain);
+                opacity: .7;
+                font-size: 24px;
                 transition: all 0.5s ease;
                 margin-bottom: 50px;
                 align-self: flex-end;;
@@ -124,8 +125,7 @@
             #exitProj:hover {
                 color: var(--hero);
                 opacity: 1;
-                /*text-shadow: 0px 0px 7px rgba(255, 255, 255, 1);*/
-
+                /*text-shadow: 0px 0px 5px var(--villain);*/
                 transition: all 0.5s ease;
             }
 
