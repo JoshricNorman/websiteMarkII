@@ -28,8 +28,8 @@
 
         /*------------------------ RESUME.CSS ------------------------*/
         #eduAchiWork {
-            width: 90vw;
-            margin: 5vh 5vw 0 5vw;
+            /*width: 90vw;
+            margin: 5vh 1vw 0 5vw;*/
         }
         #expertise {
             width: 100%;
@@ -189,13 +189,11 @@
             .carouselDesc {
                 width: 100%;
                 height: 40%;
-                justify-content: center;
+                justify-content: flex-start;
                 box-sizing: border-box;
                 -moz-box-sizing: border-box;
                 -webkit-box-sizing: border-box;
-                border-left: .5px solid rgba(255, 255, 255, 0.5);
-                border-right: .5px solid rgba(255, 255, 255, 0.5);
-
+                background-color: transparent;
             }
 
                 .caraDescBorder {
@@ -206,21 +204,30 @@
                         font-size: 24px;
                         width: 94vw;
                         margin: 0 3vw 3vh 3vw;
+                        color: var(--hero);
+                    }
+
+                    .caraButt {
+                        /*display: none !important;*/
+                        color: var(--hero);
+                        border-color: var(--hero);
                     }
 
                 .carouselDesc .vertLine {
-                    /*display: none;*/
-                    border-top: 5px solid var(--bg);
+                    border-top: 5px solid var(--hero);
+                    border-left: none;
                     height: 0;
                     width: 7vw;
                     margin: 5% auto;
+                    /*display: none !important;*/
+
                 }
 
                 .slick-dots li {
                     display: inline;
                     margin: 0 5vw;
-                    /*bottom: 45vh;
-                    position: relative;*/
+                    bottom: 35px;
+                    position: relative;
                 }
 
     /*------------------------ ABOUT.CSS ------------------------*/
@@ -484,13 +491,11 @@
                 .carouselDesc {
                     width: 100%;
                     height: 40%;
-                    justify-content: center;
+                    justify-content: flex-start;
                     box-sizing: border-box;
                     -moz-box-sizing: border-box;
                     -webkit-box-sizing: border-box;
-                    border-left: .5px solid rgba(255, 255, 255, 0.5);
-                    border-right: .5px solid rgba(255, 255, 255, 0.5);
-
+                    background-color: transparent;
                 }
 
                     .caraDescBorder {
@@ -501,19 +506,30 @@
                             font-size: 24px;
                             width: 94vw;
                             margin: 0 3vw 3vh 3vw;
+                            color: var(--hero);
+                        }
+
+                        .caraButt {
+                            /*display: none !important;*/
+                            color: var(--hero);
+                            border-color: var(--hero);
                         }
 
                     .carouselDesc .vertLine {
-                        /*display: none;*/
-                        border-top: 5px solid var(--bg);
+                        border-top: 5px solid var(--hero);
+                        border-left: none;
                         height: 0;
                         width: 7vw;
                         margin: 5% auto;
+                        /*display: none !important;*/
+
                     }
 
                     .slick-dots li {
                         display: inline;
                         margin: 0 5vw;
+                        bottom: 35px;
+                        position: relative;
                     }
 
     /*------------------------ ABOUT.CSS ------------------------*/
