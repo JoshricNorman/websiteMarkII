@@ -61,6 +61,10 @@ app.get('/tritonTracker', function( req, res) {
     res.sendFile(path.join(__dirname + '/projects/tritonTracker.html'));
 });
 
+app.get('/familyWeekend', function( req, res) {
+    res.sendFile(path.join(__dirname + '/projects/famWeekend.html'));
+});
+
 
 
 app.use(express.static(__dirname + '/public'));
