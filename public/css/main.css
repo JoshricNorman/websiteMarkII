@@ -125,6 +125,10 @@ html {
         opacity: 1;
     }
 
+    ::-webkit-scrollbar:horizontal {
+        height: 5px;
+    }
+
     *:focus {
         outline: none;
 

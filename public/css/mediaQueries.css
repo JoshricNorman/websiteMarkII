@@ -140,7 +140,9 @@
     @media screen and (min-width: 320.1px) and (max-width: 425px) {
 
     /*------------------------ MAIN.CSS ------------------------*/
-
+    ::-webkit-scrollbar {
+        width: 0;
+    }
         #backItUp {
             bottom: 3vh;
             right: 3vw;
@@ -201,7 +203,7 @@
                     height: 50%;
                 }
                     .caraTitle {
-                        font-size: 24px;
+                        font-size: 20px;
                         width: 94vw;
                         margin: 0 3vw 3vh 3vw;
                         color: var(--hero);
@@ -266,6 +268,11 @@
     /*------------------------ RESUME.CSS ------------------------*/
 
 
+        #eduAchiWork {
+            justify-content: flex-start;
+            margin: 5vh 1vw 0 1.5vw
+        }
+
             #whatCanIDo {
                 height: auto;
             }
@@ -312,6 +319,7 @@
             }
                 #education {
                     margin-top: 15px;
+                    margin-left: 0;
                 }
 
                 .resumeInfo h4 {
@@ -322,8 +330,6 @@
                     font-size: 12px;
                     font-weight: 800;
                 }
-
-
 
                 #expertise {
                     width: 100vw;
@@ -408,6 +414,10 @@
                             #projDesc {
                                 overflow:visible;
                             }
+
+            #imgModal {
+                padding-top: 5vh;
+            }
 
             #modalDesc {
                 margin-bottom: 15vh;
@@ -503,7 +513,7 @@
                         height: 50%;
                     }
                         .caraTitle {
-                            font-size: 24px;
+                            font-size: 18px;
                             width: 94vw;
                             margin: 0 3vw 3vh 3vw;
                             color: var(--hero);
@@ -752,6 +762,11 @@
                             #projTags {
                                 display: none;
                             }
+
+                #imgModal {
+                    padding-top: 5vh;
+                }
+
 
                 #modalDesc {
                     margin-bottom: 15vh;

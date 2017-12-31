@@ -65,6 +65,21 @@ app.get('/familyWeekend', function( req, res) {
     res.sendFile(path.join(__dirname + '/projects/famWeekend.html'));
 });
 
+app.get('/hullabaloo2017', function( req, res) {
+    res.sendFile(path.join(__dirname + '/projects/hullabaloo2017.html'));
+});
+
+app.get('/backgrounds1', function( req, res) {
+    res.sendFile(path.join(__dirname + '/projects/bg1.html'));
+});
+
+app.get('/logos2', function( req, res) {
+    res.sendFile(path.join(__dirname + '/projects/logos2.html'));
+});
+
+app.get('/branding', function( req, res) {
+    res.sendFile(path.join(__dirname + '/projects/personalBranding.html'));
+});
 
 
 app.use(express.static(__dirname + '/public'));

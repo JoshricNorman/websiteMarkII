@@ -469,8 +469,12 @@ $(document).ready(function(){
      * - map fullscale project image onto modal
      * - map image description onto modal
      * - freeze scrolling
+     * -hide header
      */
     $(document).on("click", ".projImg", function(){
+        var imgW = $(this).width();
+        var imgH = $(this).height();
+
         $("#imgModal").css("display", "flex");
 
         $("#modalImg").attr( "src", $(this).attr("src") );
@@ -478,11 +482,14 @@ $(document).ready(function(){
         $(".projFillCont").css("padding", "0");
 
         $('html').css('overflow', 'hidden');
+        $('#popUp').css('overflow', 'hidden');
 
         //hide navigation
         // $('header').css('z-index', '800');
+        $('header').css("visibility", "hidden");
+        $('header').css("visibility", "hidden");
         $("nav").css("visibility", "hidden");
-        $("#backItUp").css("visibility", "hidden");
+        $("#fillContent").css("padding", "0");
 
     });
 
@@ -499,14 +506,21 @@ $(document).ready(function(){
 
         //reshow navigation
         // $('header').css('z-index', '10010');
+        $('header').css("visibility", "visible");
         $("nav").css("visibility", "visible");
         $("#backItUp").css("visibility", "visible");
+        if ($(window).width() <= 425){
+            $("#fillContent").css("padding-bottom", "83px");
+        } else $("#fillContent").css("padding-top", "83px");
 
         //if we are in the portfolio Modal, prevent creating another scroll bar
-        if( $(this).attr("class") == "portImgModal")
+        if( $(this).attr("class") == "portImgModal") {
             $('html').css('overflow', 'hidden');
-        else
+            $('#popUp').css('overflow', 'auto');
+        }
+        else {
          $('html').css('overflow', 'auto');
+        }
     });
 
 
