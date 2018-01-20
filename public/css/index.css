@@ -18,12 +18,14 @@
 
     .carousel {
         width: 100%;
+        max-width: 1900px;
         height: 75vh;
         margin-bottom: 20vh;
     }
 
         .carouselSlide {
             width: 100vw;
+            max-width: 1900px;
             height: 75vh;
             background-size: cover;
             background-repeat: no-repeat;
